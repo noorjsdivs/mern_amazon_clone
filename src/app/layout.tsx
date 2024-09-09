@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Amazon Clone | Your shopping center",
+  title: "Amazon Clone || Your shopping center",
   description: "An amazon clone application for education purpose",
 };
 
