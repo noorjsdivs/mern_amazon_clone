@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
+import MainHeader from "@/components/MainHeader";
+import Layout from "@/components/Layout";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,7 +21,6 @@ export const metadata: Metadata = {
   title: "Amazon Clone | Your shopping center",
   description: "An amazon clone application for education purpose",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +31,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Layout>
+          <MainHeader />
+          {children}
+          <Footer />
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
+        </Layout>
       </body>
     </html>
   );
