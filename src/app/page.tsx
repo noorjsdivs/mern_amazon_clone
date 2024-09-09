@@ -1,9 +1,27 @@
-import React from 'react'
+import CarouselBanner from "@/components/CarouselBanner/CarouselBanner";
+import { getFetchData } from "@/components/helper";
 
-const HomePage = () => {
+import ProductList from "@/components/productlist/ProductList";
+
+
+const HomePage = async () => {
+  const endPoint = "https://dummyjson.com/products";
+  const data = await getFetchData(endPoint);
+
+  const products = data.products;
+  // console.log("products", products)
+
   return (
-    <div>HomePage</div>
-  )
-}
+    <main>
+      <div>
+        <CarouselBanner />
 
-export default HomePage
+        <div className="lg:-mt-44 mb-10">
+          <ProductList products={products} />
+        </div>
+      </div>
+    </main>
+  );
+};
+
+export default HomePage;
