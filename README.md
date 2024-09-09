@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Amazon Clone Application
+
+Welcome to the Amazon Clone Application! This project is designed to help you manage your tasks efficiently while allowing multiple collaborators to work seamlessly in a team environment.
 
 ## Getting Started
 
-First, run the development server:
+To begin working on this project:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+1. **Clone the Repository:**  
+   Clone this repository to your local machine using the following command:
+
+   ```bash
+   git clone https://github.com/noorjsdivs/mern_amazon_clone.git
+   ```
+Install Dependencies:
+
+Navigate to the project directory and install the required packages using one of the following package managers:
+
+npm install
+   ```bash
+   npm install
+```
+#### or
+pnpm install
+   ```bash
+   pnpm install
+```
+#### or
+yarn
+   ```bash
+   yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Create a Branch:
+Each collaborator must create their own branch to work on. Use the following command to create and switch to a new branch:
+#### create branch
+git branch your-branch-name
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### switch or move into your branch
+git checkout your-branch-name
+#### or
+git switch your-branch-name
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+### Run the Application:
+Start the development server using the following command:
 
-To learn more about Next.js, take a look at the following resources:
+npm run dev
+   ```bash
+      npm run dev
+```
+#### or
+pnpm dev
+   ```bash
+      pnpm dev
+```
+#### or
+yarn run dev
+   ```bash
+      yarn run dev
+```
+The application will be running on [localhost.](http://localhost:3000/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Push Changes:
+Make sure to push changes from your own branch and avoid pushing directly to the main branch. Use the following command to push your branch:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+git push origin <your-branch-name>
 
-## Deploy on Vercel
+## Functionalities
+Make as same as github link
+Clean designClean design
+Follow best practice
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technology Stack
+This project is built using Next.js and leverages modern JavaScript libraries and tools to provide a robust development environment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Contribution Guidelines
+All collaborators must create their own branch and avoid pushing directly to the main branch. Ensure that your code follows best practices and is properly tested before pushing.
+
+Happy coding!
