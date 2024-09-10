@@ -10,7 +10,7 @@ interface Props {
 const ProductList = ({ products }: Props) => {
       return (
             <div className="py-10">
-                  <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  <Container className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {
                               products.map((item) => <ProductCart key={item.id} product={item} />)
                         }

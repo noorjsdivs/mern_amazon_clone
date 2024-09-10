@@ -1,8 +1,9 @@
 "use client"
+import { ProductType } from "@/type";
 import Image from "next/image";
 import { useState } from "react";
 
-const ProductImage = ({ product }) => {
+const ProductImage = ({ product }: { product: ProductType }) => {
       const [imageClick, setImageClick] = useState(product?.images[0])
       return (
             <div className="flex justify-between gap-20">

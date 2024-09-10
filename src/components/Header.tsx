@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import Image from "next/image";
@@ -7,14 +7,28 @@ import { SlLocationPin } from "react-icons/sl";
 import { cartIcon, logo } from "@/assets";
 import { CgSearch } from "react-icons/cg";
 import { VscClose } from "react-icons/vsc";
-import { PiShoppingCartSimpleLight } from "react-icons/pi";
 import BottomHeader from "./BottomHeader";
 import { FaUser } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToUser, removeUser } from "@/redux/amazonSlice";
 
 const Header = () => {
       const [close, setClose] = useState("");
       const { data: session } = useSession()
+
+      const dispatch = useDispatch()
+      //@ts-ignore
+      const { cart } = useSelector((state) => state.amazon)
+
+      useEffect(() => {
+            if (session) {
+                  dispatch(addToUser(session?.user))
+            } else {
+                  dispatch(removeUser())
+            }
+      }, [session?.user])
+
 
       return (
             <div>
@@ -61,7 +75,7 @@ const Header = () => {
                                                             <Image className="h-8 w-8 rounded-full" src={session?.user?.image!} alt="userImage" width={200} height={200} />
                                                       </div>
                                                       <div>
-                                                            <h1 className=''>Hello, <span>{session?.user.name}</span></h1>
+                                                            <h1 className='text-xs lg:text-[14px]'>Hello, <span>{session?.user.name}</span></h1>
                                                             <h1 className='text-xs sm:text-sm'>Account & Lists</h1>
                                                       </div>
                                                 </div>
@@ -91,7 +105,8 @@ const Header = () => {
                                                 {/* <PiShoppingCartSimpleLight size={30} /> */}
                                                 <Image className="h-8 w-10 relative" src={cartIcon} alt="cartImage" />
                                                 <h1 className='text-[18px]'>Cart</h1>
-                                                <span className='absolute bottom-5 text-red-400 left-5 flex items-center justify-center text-xs'>1</span>
+                                                {/* Length */}
+                                                <span className='absolute bottom-5 text-red-400 left-[17px] flex items-center justify-center text-xs'>{cart?.length > 0 ? cart.length : "0"}</span>
                                           </div>
                                     </Link>
                               </Container>

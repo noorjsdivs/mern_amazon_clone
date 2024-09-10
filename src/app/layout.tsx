@@ -38,6 +38,12 @@ export default function RootLayout({
           <Toaster
             position="top-center"
             reverseOrder={false}
+          // toastOptions={{
+          //   style: {
+          //     background: "#000000",
+          //     color: "#ffffff",
+          //   },
+          // }}
           />
         </Layout>
       </body>

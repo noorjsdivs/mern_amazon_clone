@@ -6,6 +6,7 @@ import bannerThree from "./banner/bannerThree.jpg";
 import bannerFour from "./banner/bannerFour.jpg";
 import bannerFive from "./banner/bannerFive.jpg";
 import paymentImage from "./payment.webp";
+import notFoundImage from "./notFound.png"
 
 export {
   logo,
@@ -16,4 +17,5 @@ export {
   bannerFour,
   bannerFive,
   paymentImage,
+  notFoundImage
 };
