@@ -1,16 +1,18 @@
-"use client"
-import { SessionProvider } from "next-auth/react"
+"use client";
+import { store } from "@/redux/store";
+import { SessionProvider } from "next-auth/react";
+import { Provider } from "react-redux";
 
-interface Props{
-    children:React.ReactNode
+interface Props {
+  children: React.ReactNode;
 }
 
-const LayOut = ({children}:Props) => {
+const LayOut = ({ children }: Props) => {
   return (
     <SessionProvider>
-        {children}
+      <Provider store={store}>{children}</Provider>
     </SessionProvider>
-  )
-}
+  );
+};
 
-export default LayOut
+export default LayOut;

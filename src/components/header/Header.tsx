@@ -4,19 +4,30 @@ import Image from "next/image";
 import { IoLocation, IoSearch } from "react-icons/io5"; // Import the search icon
 import InputFiled from "./InputFiled";
 import { signIn, useSession } from "next-auth/react";
+import { useSelector } from "react-redux";
+import BottomHeader from "./BottomHeader";
+import Link from "next/link";
+
 
 const Header = () => {
   const { data: session } = useSession();
   // console.log("this is session", session);
+  const selector = useSelector((state) => state.shopping.cart)
+  // console.log("selector length", selector.length)
+
+  
   return (
-    <div className="flex bg-amazonBlue p-1 px-10 text-white justify-between items-center">
+    <header className="bg-white sticky top-0 z-50">
+       <div className="flex bg-amazonBlue p-1 cursor-pointer px-10 text-white justify-between items-center">
       {/* Left side (logo and location) */}
       <div className="flex gap-3 items-center">
-        <Image
+      <Link href={"/"}>
+      <Image
           className="w-44 h-14 mt-2 p-2 border border-transparent hover:border-white transition-all duration-300"
           src={logo}
           alt="Amazon logo"
         />
+      </Link>
         <div className="text-lightText flex gap-1 items-center border border-transparent hover:border-white transition-all duration-300 px-2">
           <span>
             <IoLocation size={24} />
@@ -67,16 +78,24 @@ const Header = () => {
           </span>
         </div>
         {/* cart */}
+        <Link href={"/cart"}>
         <div className="text-lightText flex gap-1 items-center border border-transparent hover:border-white transition-all duration-300 px-3">
-          <div className="relative">
-            <Image className="w-14" src={cartIcon} alt="image" />
+          <div className="relative p-1">
+            <Image className="w-12 " src={cartIcon} alt="image" />
           </div>
-          <span className="absolute  mb-7 text-yellow-600 ml-6    text-center items-center justify-center text-sm">
-            97
+          <span className="absolute  mb-7 text-yellow-600 ml-6 font-medium   text-center items-center justify-center text-sm">
+          {selector.length > 0 ? selector.length : "0"}
           </span>
         </div>
+        </Link>
       </div>
+     
     </div>
+     <BottomHeader/>
+
+    </header>
+  
+     
   );
 };
 
