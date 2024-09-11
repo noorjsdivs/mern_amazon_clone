@@ -25,9 +25,12 @@ const CarouselBanner = () => {
           src={item?.sources}
           alt={item?.title}
           height={1080}
+          className='w-full'
+          priority
           />
         ))}
        </div>
+       <div className="absolute top-0 left-0 inset-0 bg-gradient-to-b from-gray-900/10 via-gray-900/30 to-gray-300 dark:to-mainColor" />
     </div>
   )
 }

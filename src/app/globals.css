@@ -10,4 +10,7 @@
     .link {
         @apply border border-white/10 hover:border-amazonYellowDark hover:text-white py-1 px-2 cursor-pointer rounded-md duration-200;
       }
+      .footerLink {
+        @apply text-gray-400 hover:underline text-sm hover:text-gray-50 cursor-pointer mb-2 duration-150;
+      }
 }

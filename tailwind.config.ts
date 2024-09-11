@@ -20,6 +20,7 @@ const config: Config = {
         amazonGreen:"#7fda69",
         amazonYellowDark:"#f7ca00",
         footerBg:"#232f3d",
+        footerBottom: "#131A22",
         lightText:"#ccc",
         quantity_box:"#F0F2F2"
       },
