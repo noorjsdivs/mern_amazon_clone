@@ -1,14 +1,21 @@
+"use client";
 import { logo } from "@/assets";
+import SearchBtn from "@/components/SearchField/SearchBtn";
 import Container from "@/Container/Container";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import { IoLocation, IoSearch } from "react-icons/io5";
-import { TbJewishStar } from "react-icons/tb";
+import { IoCloseSharp, IoLocation, IoSearch } from "react-icons/io5";
+
+import { useSelector } from "react-redux";
 
 const TopHeader = () => {
+  const { cart, favorite } = useSelector((state: any) => state.blink);
+  const [searchValue, setSearchValue] = useState("");
+
   return (
-    <Container>
+    <Container className="sticky top-0 z-20">
       <div className="flex items-center justify-between bg-black text-white px-7 py-3 ">
         <Link href={"/"}>
           <div className="flex items-center gap-2">
@@ -26,14 +33,22 @@ const TopHeader = () => {
           </div>
         </div>
         <div className="w-[700px] relative">
-          <input
+          {/* <input
             type="text"
             placeholder="Search products..."
-            className="outline-none rounded-l-md h-10 px-4 w-[680px]  text-black placeholder:text-gray-500"
+            className="outline-none rounded-l-md h-10 px-7 w-[680px]  text-black placeholder:text-gray-500"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
           />
+          {searchValue && (
+            <span className="absolute top-2 right-14 cursor-pointer text-red-500" onClick={() => setSearchValue("")}>
+              <IoCloseSharp size={23} />
+            </span>
+          )}
           <span className="absolute top-0 right-0  flex items-center justify-center bg-orange-600 h-10 w-12  rounded-r-md">
             <IoSearch size={25} />
-          </span>
+          </span> */}
+          <SearchBtn />
         </div>
         <div className="flex items-center gap-5">
           <div>
@@ -45,24 +60,29 @@ const TopHeader = () => {
             <p className="font-bold">& Orders</p>
           </div>
           <div className="flex items-center gap-4">
-            <p className="flex flex-col">
-              <span className="relative">
-                Marked{" "}
-                <span className="text-orange-600 font-bold text-md absolute top-0 right-0 bg-white h-5 w-5 rounded-full flex items-center justify-center">
-                  1
+            <Link href={"/favorite"}>
+              <p className="flex flex-col">
+                <span className="relative">
+                  Marked{" "}
+                  <span className="text-orange-600 font-bold text-md absolute top-0 right-0 bg-white h-5 w-5 rounded-full flex items-center justify-center">
+                    {favorite?.length > 0 ? favorite.length : 0}
+                  </span>
+                </span>{" "}
+                <span className="font-bold flex items-center gap-1">
+                  & Favorite
                 </span>
-              </span>{" "}
-              <span className="font-bold flex items-center gap-1">
-                & Favorite
-              </span>
-            </p>{" "}
-            <p className="font-bold relative">
-              <HiOutlineShoppingBag size={30} />
-              Cart{" "}
-              <span className="text-orange-600 font-bold text-md absolute top-1 -right-4 bg-white h-5 w-5 rounded-full flex items-center justify-center">
-                1
-              </span>
-            </p>
+              </p>
+            </Link>
+            <Link href={"/cart"}>
+              {" "}
+              <p className="font-bold relative">
+                <HiOutlineShoppingBag size={30} />
+                Cart{" "}
+                <span className="text-orange-600 font-bold text-md absolute top-1 -right-4 bg-white h-5 w-5 rounded-full flex items-center justify-center">
+                  {cart?.length > 0 ? cart?.length : 0}
+                </span>
+              </p>
+            </Link>
           </div>
         </div>
       </div>

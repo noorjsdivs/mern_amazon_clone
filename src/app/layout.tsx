@@ -4,6 +4,8 @@ import "./globals.css";
 import TopHeader from "@/components/Home/Header/TopHeader";
 import BottomHeader from "@/components/Home/Header/BottomHeader";
 import Footer from "@/components/Home/Footer";
+import Layout from "@/Layout/Layout";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,7 +19,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Amazon Clone | Your shopping center",
+  title: "Blink Basket | Your shopping center",
   description: "An amazon clone application for education purpose",
 };
 
@@ -31,10 +33,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <TopHeader />
-        <BottomHeader />
-        {children}
-        <Footer />
+        <Layout>
+          <TopHeader />
+          <BottomHeader />
+          {children}
+          <Footer />
+          <Toaster position="bottom-right"/>
+        </Layout>
       </body>
     </html>
   );
