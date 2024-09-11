@@ -9,8 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        amazon_blue: "#131921",
+        amazon_yellow: "#febd69",
+        amazone_light: "#232F3E",
+        amazon_dark: "#131921",
+        lightText: "#ccc",
+      },
+      fontFamily: {
+        bodyFont: ["Poppins", "sans-serif"],
       },
     },
   },
