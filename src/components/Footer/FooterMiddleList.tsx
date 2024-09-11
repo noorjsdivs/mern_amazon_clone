@@ -12,7 +12,7 @@ export default function FooterMiddleList({title, listItem}:Props) {
       <ul className='flex flex-col gap-2 text-gray-300'>
         {listItem?.map((item:any)=>
             item.listData.map((data:any)=>(
-                <li> {data} </li>
+                <li className='hover:underline underline-offset-2 duration-200 cursor-pointer'> {data} </li>
             ))
         )}
       </ul>
