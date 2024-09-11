@@ -1,6 +1,7 @@
 import { logo } from "@/assets";
 import Container from "@/Container/Container";
 import Image from "next/image";
+import Link from "next/link";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { IoLocation, IoSearch } from "react-icons/io5";
 import { TbJewishStar } from "react-icons/tb";
@@ -9,10 +10,12 @@ const TopHeader = () => {
   return (
     <Container>
       <div className="flex items-center justify-between bg-black text-white px-7 py-3 ">
-        <div className="flex items-center gap-2">
-          <Image src={logo} className="h-10 w-10" alt="logo" />
-          <p className="text-sm md:text-xl font-bold">Blink Basktet</p>
-        </div>
+        <Link href={"/"}>
+          <div className="flex items-center gap-2">
+            <Image src={logo} className="h-10 w-10" alt="logo" />
+            <p className="text-sm md:text-xl font-bold">Blink Basktet</p>
+          </div>
+        </Link>
         <div className="flex items-center gap-1">
           <span>
             <IoLocation size={28} />

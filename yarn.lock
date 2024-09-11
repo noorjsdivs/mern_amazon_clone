@@ -2520,6 +2520,11 @@ swiper@^11.1.12:
   resolved "https://registry.npmjs.org/swiper/-/swiper-11.1.12.tgz"
   integrity sha512-PUkCToYAZMB4kP7z+YfPnkMHOMwMO71g8vUhz2o5INGIgIMb6Sb0XiP6cEJFsiFTd7FRDn5XCbg+KVKPDZqXLw==
 
+tailwind-merge@^2.5.2:
+  version "2.5.2"
+  resolved "https://registry.npmjs.org/tailwind-merge/-/tailwind-merge-2.5.2.tgz"
+  integrity sha512-kjEBm+pvD+6eAwzJL2Bi+02/9LFLal1Gs61+QB7HvTfQQ0aXwC5LGT8PEt1gS0CWKktKe6ysPTAy3cBC5MeiIg==
+
 tailwindcss@^3.4.1:
   version "3.4.10"
   resolved "https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.10.tgz"
