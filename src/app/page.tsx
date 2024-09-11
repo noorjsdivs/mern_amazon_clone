@@ -1,8 +1,19 @@
+import CarouselBanner from "@/components/CarouselBanner";
+import { Metadata } from "next";
 import Link from "next/link";
+
+
+export const metadata:Metadata={
+title: "Home | Amazon 2.0"
+}
 
 export default function Home() {
   return (
+    <div>
+      <CarouselBanner/>
+   
     <div className="items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-mono)]">
+     
       <div className="flex flex-col items-start max-w-2xl mx-auto gap-3">
         <h2 className="text-4xl font-bold underline underline-offset-4 decoration-[1px] text-blue-300 hover:text-blue-500 duration-200 cursor-pointer">
           Amazon Clone Application
@@ -46,6 +57,7 @@ export default function Home() {
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }

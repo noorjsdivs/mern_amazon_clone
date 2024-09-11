@@ -8,9 +8,20 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      flex:{
+        full:"0 0 100%"
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        amazonBule:"#131921",
+        amazonLight:"#232F3F",
+        amazonYellow:"fcd814",
+        amazonOrange:"#fba41c",
+        amazonOrangeDark:"#fa8900",
+        amazonGreen:"#7fda69",
+        amazonYellowDark:"#f7ca00",
+        footerBg:"#232f3d",
+        lightText:"#ccc",
+        quantity_box:"#F0F2F2"
       },
     },
   },
