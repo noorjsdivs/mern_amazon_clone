@@ -3,19 +3,25 @@ import Image from "next/image"
 import { MdFavoriteBorder } from "react-icons/md";
 import PriceFormate from "./PriceFormate";
 import AddToCartBtn from "./AddToCartBtn";
+import Link from "next/link";
 
 const ProductCard = ({product}) => {
     // console.log("product", product)
   return (
     <div className="relative  h-96  flex w-full max-w-xs flex-col overflow-hidden rounded-lg  bg-white hover:shadow-lg hover:shadow-slate-400 duration-300 border border-gray-300">
+
     <div className="relative mx-3 mt-3 flex  overflow-hidden rounded-xl">
-      <Image
-        className="object-contain w-52 h-50 mx-auto mt-10"
+     
+     <Link href={{pathname:`/product/${product.id}`, query:{id:product.id}}}>
+     <Image
+        className="object-contain w-64 h-28 hover:scale-110 duration-300 mx-auto mt-10"
         src={product.images[0]}
         height={300}
         width={300}
         alt="product"
       />
+     </Link>
+     
      <div className="items-center">
      <span className="absolute top-0 right-0 border border-gray-400  m-2 rounded-full hover:text-white hover:bg-black px-2 py-0.5 text-center text-sm font-medium text-black duration-300">
         39% OFF

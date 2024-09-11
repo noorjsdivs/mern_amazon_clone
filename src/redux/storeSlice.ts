@@ -41,6 +41,10 @@ export const counterSlice = createSlice({
           existProduct.quentity -=1
         }
       },
+
+      deleteBtn:(state, action) =>{
+        state.cart = state.cart.filter((item) => item.id !== action.payload)
+      }
   
  
    
@@ -49,6 +53,6 @@ export const counterSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { addTocart, incressQuantity, decressQuantity } = counterSlice.actions
+export const { addTocart, incressQuantity, decressQuantity, deleteBtn } = counterSlice.actions
 
 export default counterSlice.reducer
