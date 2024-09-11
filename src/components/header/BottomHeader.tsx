@@ -2,7 +2,7 @@ import { LuMenu } from "react-icons/lu";
 
 const BottomHeader = () => {
   return (
-    <div className="w-full mx-auto px-4 h-10 bg-amazone_light text-white flex items-center">
+    <div className="w-full mx-auto px-4 h-10 bg-amazone_light text-white flex items-center gap-2 text-sm">
       <p className="flex items-center gap-1 cursor-pointer border border-transparent hover:border-white px-2 h-8 duration-300">
         <LuMenu className="text-xl" /> All
       </p>

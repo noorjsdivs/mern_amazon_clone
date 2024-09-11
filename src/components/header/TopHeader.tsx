@@ -1,5 +1,6 @@
 import { carticon, logo } from "@/assets";
 import Image from "next/image";
+import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoLocationSharp, IoSearch } from "react-icons/io5";
 
@@ -8,12 +9,13 @@ const Header = () => {
     <div className="w-full bg-amazon_blue h-20 text-lightText">
       <div className="w-full mx-auto h-full inline-flex items-center md:justify-between gap-1 md:gap-3 px-4 ">
         {/* logo */}
-        <div
+        <Link
+          href={"/"}
           className="px-2 h-[70%] flex items-center justify-center border border-transparent
          hover:border-lightText cursor-pointer duration-300"
         >
           <Image src={logo} alt="logo" className="w-28 object-cover mt-1" />
-        </div>
+        </Link>
         {/* delivery */}
         <div
           className="px-2 h-[50%] hidden lg:inline-flex items-center justify-center border border-transparent
@@ -61,7 +63,8 @@ const Header = () => {
           <p className="text-sm font-semibold">& orders</p>
         </div>
         {/* cart */}
-        <div
+        <Link
+          href={"/cart"}
           className="text-xs px-2 inline-flex flex-col items-start justify-center text-gray-100 border border-transparent
          hover:border-lightText duration-300 h-[60%] cursor-pointer relative"
         >
@@ -72,7 +75,7 @@ const Header = () => {
           >
             0
           </span>
-        </div>
+        </Link>
       </div>
     </div>
   );
