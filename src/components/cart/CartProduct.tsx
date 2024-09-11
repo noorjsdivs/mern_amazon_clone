@@ -48,6 +48,7 @@ const CartProduct = ({ product }: { product: ProductType }) => {
                         <div className="flex items-center gap-2 mt-1 mb-1 text-sm">
                               <h1 className="flex items-center gap-2"> <ImCheckmark size={10} className="text-green-500" /> {product?.availabilityStatus && (<p>In Stock</p>)}</h1>
                         </div>
+                        {/* Saving */}
                         <div>
                               <h1 className="flex items-center gap-2 mt-1"> You are saving <PriceFormat className="text-green-500 text-[14px]" amount={product?.price * (product?.discountPercentage / 100) * product?.quantity} /> upon purchase</h1>
                         </div>

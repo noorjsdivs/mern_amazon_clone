@@ -3,6 +3,7 @@ import AddToCartButton from "@/components/AddToCartButton";
 import Container from "@/components/Container";
 import PriceFormat from "@/components/PriceFormate";
 import ProductImage from "@/components/ProductImage";
+import SingleProdeuctPage from "@/components/SingleProdeuctPage";
 import { getData } from "@/hooks";
 import { ProductType } from "@/type";
 import { Metadata } from "next";
@@ -76,6 +77,7 @@ const ProductPage = async ({ params }: { params: ProductType }) => {
                                     </div>
                                     <span>People are viewing this right now</span>
                               </div>
+
                               <h1 className="mt-4 text-sm md:text-base lg:text-lg">{product?.description}</h1>
                               <h1 className="mt-2 text-sm md:text-base lg:text-lg">Brand: {product?.brand}</h1>
                               <h1 className="mt-2 text-sm md:text-base lg:text-lg">Category: {product?.category}</h1>

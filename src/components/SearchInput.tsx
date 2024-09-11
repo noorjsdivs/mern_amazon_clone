@@ -57,7 +57,7 @@ const SearchInput = () => {
                   className="h-10 mx-4 hidden w-[500px] md:inline-flex items-center justify-between relative"
             >
                   <input
-                        className="w-full h-full px-2 placeholder:text-sm text-base text-black border-[3px] border-transparent outline-none focus-visible:border-amazonOrange"
+                        className="w-full h-full px-4 pr-10  placeholder:text-sm text-base text-black border-[3px] border-transparent outline-none focus-visible:border-amazonOrange"
                         type="text"
                         onChange={(e) => setSearchQuery(e.target.value)}
                         value={searchQuery}
@@ -73,7 +73,7 @@ const SearchInput = () => {
                   )}
 
                   <span className="w-12 h-full bg-amazonOrange text-gray-600 hover:bg-amazonOrangeDark duration-200 cursor-pointer  text-2xl flex items-center justify-center absolute right-0">
-                        <HiOutlineSearch size={20}/>
+                        <HiOutlineSearch size={20} />
                   </span>
 
                   {/*  ============= Searchfield start here ========== */}
