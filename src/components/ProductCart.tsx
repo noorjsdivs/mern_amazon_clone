@@ -5,6 +5,8 @@ import AddToCartButton from './AddToCartButton';
 import PriceFormat from './PriceFormate';
 
 const ProductCart = ({ product }) => {
+
+
       return (
             <div className="border-2 border-amazonYellow relative bg-white lg:h-[475px] ">
                   <Link href={{ pathname: `/product/${product?.id}`, query: { id: product?.id } }}>
@@ -14,7 +16,7 @@ const ProductCart = ({ product }) => {
                               </div>
                         </div>
                         <MdFavoriteBorder size={25} className='absolute top-3 left-3 text-amazonYellow cursor-pointer' />
-                        <span className='absolute top-3 right-3 bg-amazonYellow/85 font-medium py-0.5 px-1.5 text-xs text-green-500'>$12 Saving</span>
+                        <span className='absolute top-3 right-3 bg-amazonYellow/85 font-medium py-0.5 px-1.5 text-xs text-green-500'>13%</span>
                   </Link>
                   <div className="px-4 py-2">
                         <h1 className="text-[20px] mt-1 font-semibold h-10 mb-2">{product.title}</h1>

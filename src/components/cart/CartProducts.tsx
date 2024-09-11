@@ -39,7 +39,7 @@ const CartProducts = () => {
               Your shopping cart is empty. adding items to your cart now and enjoy great deals! <br /> Explore a wide variety of products tailored just for you.
             </p>
             <Link href={"/"}>
-              <button className="py-2 px-6 md:px-10 mt-6 bg-yellow-400 text-gray-500">
+              <button className="py-2 px-6 md:px-10 mt-6 bg-yellow-400 text-gray-600">
                 Add to Shopping
               </button>
             </Link>

@@ -35,7 +35,7 @@ const CartSummary = () => {
                               </div>
                               <div>
                                     <button className="w-full ">
-                                          <p className="px-6 py-0.5 text-green-600 bg-amazonYellow/75 text-[16px]">
+                                          <p className="px-6 py-0.5 text-green-700 rounded-full bg-amazonYellow/75 text-[16px]">
                                                 Payment
                                           </p>
                                     </button>

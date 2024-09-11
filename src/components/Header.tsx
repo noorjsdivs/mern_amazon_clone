@@ -1,20 +1,18 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Container from "./Container";
 import Link from "next/link";
 import Image from "next/image";
 import { SlLocationPin } from "react-icons/sl";
 import { cartIcon, logo } from "@/assets";
-import { CgSearch } from "react-icons/cg";
-import { VscClose } from "react-icons/vsc";
 import BottomHeader from "./BottomHeader";
 import { FaUser } from "react-icons/fa";
 import { signIn, useSession } from "next-auth/react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToUser, removeUser } from "@/redux/amazonSlice";
+import SearchInput from "./SearchInput";
 
 const Header = () => {
-      const [close, setClose] = useState("");
       const { data: session } = useSession()
 
       const dispatch = useDispatch()
@@ -49,22 +47,9 @@ const Header = () => {
                                           </div>
                                     </div>
 
-                                    {/* Search Bar */}
-                                    <div className='flex items-center relative mt-2 lg:mt-0 w-full lg:w-auto'>
-                                          <input
-                                                value={close}
-                                                onChange={(e) => setClose(e.target.value)}
-                                                placeholder='Search amazon...'
-                                                type="text"
-                                                className='py-2 placeholder:text-gray-700 text-gray-700 outline-none w-full lg:w-[500px] pr-10 pl-4'
-                                          />
-                                          <button className='bg-amazonYellowDark py-[10px] px-3 text-gray-800'>
-                                                <CgSearch size={20} />
-                                          </button>
-                                          {close && (
-                                                <VscClose onClick={() => setClose("")} className='absolute right-14 top-2.5 text-gray-800 cursor-pointer  duration-300 hover:text-red-500' size={20} />
-                                          )}
-                                    </div>
+                                    {/* Search Input */}
+                                    <SearchInput />
+
 
                                     {/* Account & Lists */}
                                     {/* user */}
@@ -94,7 +79,7 @@ const Header = () => {
                                     <div className=' mt-4 lg:mt-0'>
                                           <h1 className='flex items-center gap-2 text-sm'>
                                                 Marked
-                                                <span className='border border-red-400 text-red-400 px-2 flex items-center justify-center h-4 w-4 text-xs'>1</span>
+                                                <span className='border border-red-400 text-red-400 px-2 flex items-center justify-center h-4 w-4 text-xs'>0</span>
                                           </h1>
                                           <h1 className='text-xs sm:text-sm'>& Favorite</h1>
                                     </div>
@@ -106,7 +91,7 @@ const Header = () => {
                                                 <Image className="h-8 w-10 relative" src={cartIcon} alt="cartImage" />
                                                 <h1 className='text-[18px]'>Cart</h1>
                                                 {/* Length */}
-                                                <span className='absolute bottom-5 text-red-400 left-[17px] flex items-center justify-center text-xs'>{cart?.length > 0 ? cart.length : "0"}</span>
+                                                <span className='absolute bottom-5 text-red-400 left-[18px] flex items-center justify-center text-xs'>{cart?.length > 0 ? cart.length : "0"}</span>
                                           </div>
                                     </Link>
                               </Container>

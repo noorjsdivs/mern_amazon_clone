@@ -4,6 +4,7 @@ export const calculateCartTotals = () => {
       //@ts-ignore
       const { cart } = useSelector((state) => state.amazon)
       const totalAmt = cart.reduce(
+            //@ts-ignore
             (sum, product) => {
                   sum.regular += product?.price * product?.quantity!;
                   sum.discounted +=

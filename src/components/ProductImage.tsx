@@ -6,8 +6,8 @@ import { useState } from "react";
 const ProductImage = ({ product }: { product: ProductType }) => {
       const [imageClick, setImageClick] = useState(product?.images[0])
       return (
-            <div className="flex justify-between gap-20">
-                  <div className="flex flex-col">
+            <div className="flex justify-between">
+                  <div className="flex flex-col lg:px-10 lg:py-10 py-4">
                         {product.images.map((item, index) => (
                               <button
                                     key={index}
@@ -26,7 +26,7 @@ const ProductImage = ({ product }: { product: ProductType }) => {
                               </button>
                         ))}
                   </div>
-                  <div>
+                  <div className="lg:border-r-2 border-amazonYellow ">
                         <Image className="lg:h-[400px] lg:w-96" src={imageClick} alt="img" height={200} width={200} />
                   </div>
             </div>
