@@ -582,6 +582,11 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
+classnames@^2.2.5:
+  version "2.5.1"
+  resolved "https://registry.npmjs.org/classnames/-/classnames-2.5.1.tgz"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
+
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.npmjs.org/client-only/-/client-only-0.0.1.tgz"
@@ -2105,7 +2110,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.2.1.tgz"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prop-types@^15.8.1:
+prop-types@^15.5.8, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.8.1.tgz"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2132,6 +2137,13 @@ react-dom@^18, react-dom@^18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.2"
 
+react-easy-swipe@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.npmjs.org/react-easy-swipe/-/react-easy-swipe-0.0.21.tgz"
+  integrity sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==
+  dependencies:
+    prop-types "^15.5.8"
+
 react-icons@^5.3.0:
   version "5.3.0"
   resolved "https://registry.npmjs.org/react-icons/-/react-icons-5.3.0.tgz"
@@ -2141,6 +2153,15 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-responsive-carousel@^3.2.23:
+  version "3.2.23"
+  resolved "https://registry.npmjs.org/react-responsive-carousel/-/react-responsive-carousel-3.2.23.tgz"
+  integrity sha512-pqJLsBaKHWJhw/ItODgbVoziR2z4lpcJg+YwmRlSk4rKH32VE633mAtZZ9kDXjy4wFO+pgUZmDKPsPe1fPmHCg==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.5.8"
+    react-easy-swipe "^0.0.21"
 
 react@*, react@^18, react@^18.2.0, react@^18.3.1, "react@>= 16.8.0 || 17.x.x || ^18.0.0-0":
   version "18.3.1"
