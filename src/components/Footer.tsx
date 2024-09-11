@@ -77,11 +77,11 @@ const Footer = () => {
 
   return (
     <footer className="bg-gray-800 text-white py-6 ">
-      <Container className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {footerData.map((section) => (
           <div key={section._id}>
             <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
-            <ul>
+            <ul className=''>
               {section.listItem.map((item) =>
                 item.listData.map((listItem, index) => (
                   <li key={index} className="text-sm mb-2 hover:underline cursor-pointer">
@@ -92,7 +92,7 @@ const Footer = () => {
             </ul>
           </div>
         ))}
-      </Container>
+      </div>
     </footer>
   );
 };

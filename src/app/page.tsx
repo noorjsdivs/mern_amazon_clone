@@ -13,7 +13,7 @@ const HomePage = async () => {
 
   return (
     <main>
-      <div>
+      <div className="overflow-hidden">
         <CarouselBanner />
 
         <div className="lg:-mt-44 mb-10">
