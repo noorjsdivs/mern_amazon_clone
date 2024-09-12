@@ -1,7 +1,9 @@
 "use client";
-import { store } from "@/redux/store";
+import Loading from "@/app/product/[id]/loading";
+import { persistor, store } from "@/redux/store";
 import { SessionProvider } from "next-auth/react";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +12,12 @@ interface Props {
 const LayOut = ({ children }: Props) => {
   return (
     <SessionProvider>
-      <Provider store={store}>{children}</Provider>
+        <PersistGate loading={<Loading/>} persistor={persistor}>
+        <Provider store={store}>{children}</Provider>
+
+        </PersistGate>
+     
+  
     </SessionProvider>
   );
 };
