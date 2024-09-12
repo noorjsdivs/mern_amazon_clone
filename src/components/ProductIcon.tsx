@@ -11,7 +11,7 @@ const ProductIcon = ({product}:{product:Product}) => {
             {product?.discountPercentage}%
         </p>
         <span className='text-xl z-40 '>
-            <MdFavoriteBorder className='hover:bg-amazonBule'/>
+            <MdFavoriteBorder />
         </span>
     </div>
   )

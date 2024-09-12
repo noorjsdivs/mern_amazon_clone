@@ -5,19 +5,27 @@ import PriceFormat from './PriceFormat'
 import AddToCartButton from './AddToCartButton'
 
 import ProductIcon from './ProductIcon';
+import Link from 'next/link'
 
 const ProductCard = ({product}:{product:Product}) => {
   return (
     <div className='border border-gray-200 rounded-md bg-white overflow-hidden'>
         <div className='relative group overflow-hidden h-72'>
-            <Image src={product?.images[0]} 
-            alt='product-images' 
-            width={600} 
-            height={600}
-            loading='lazy'
-            className=' w-full h-full object-contain bg-[#f8f8f8] group-hover:scale-110 duration-200'
-            />
-            <ProductIcon product ={product}/>
+            <Link 
+                href={{
+                    pathname: `product/${product?.id}`,
+                    query: {id:product?.id}
+                }}
+                >
+                <Image src={product?.images[0]} 
+                alt='product-images' 
+                width={600} 
+                height={600}
+                loading='lazy'
+                className=' w-full h-full object-contain bg-[#f8f8f8] group-hover:scale-110 duration-200'
+                />
+                <ProductIcon product ={product}/>
+            </Link>
         </div>
         <div className='py-2 px-4 flex flex-col gap-2 justify-between'>
             <div className='flex flex-col gap-1 h-36'>

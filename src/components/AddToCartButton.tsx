@@ -9,7 +9,9 @@ interface Props{
 
 const AddToCartButton = ({product, className}:Props) => {
   return (
-    <button className={twMerge("text-sm text-white hover:text-amazonBule tracking-wide font-medium mb-2 border-[1px]  border-amazonBule/50 py-2 rounded-full bg-amazonLight hover:bg-amazonYellowDark duration-200")}>
+    <button 
+   // onClick={()GiToaster.success("Added Product successfoully!")}
+    className={twMerge("text-sm text-white hover:text-amazonBule tracking-wide font-medium mb-2 border-[1px]  border-amazonBule/50 py-2 rounded-full bg-amazonLight hover:bg-amazonYellowDark duration-200")}>
         Add to cart
     </button>
   )
