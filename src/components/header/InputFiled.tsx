@@ -1,42 +1,60 @@
 "use client";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { IoSearch } from "react-icons/io5";
-import { useEffect, useState } from "react";
-import ProductList from "../productlist/ProductList";
-import ProductCard from "../ProductCard";
+import axios from "axios";
+import toast from "react-hot-toast";
 
-const InputFiled = () => {
-  const [cards, setCards] = useState([]);
-  const [filteredCards, setFilteredCards] = useState([]);
+const InputField = () => {
+  const [searchTerm, setSearchTerm] = useState(""); // To store the search input
+  const [products, setProducts] = useState([]); // To store the fetched products
+  const router = useRouter();
 
+  // Fetch data from the API
   useEffect(() => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        const allData = data.products;
-        setCards(allData);
-        setFilteredCards(allData);
-      });
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("https://dummyjson.com/products");
+        setProducts(response.data.products); // Store the products in state
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      }
+    };
+    fetchProducts();
   }, []);
 
-  const handleSearch = (e) => {
+  // Handle search and redirect to the first matching product page
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const searchQuery = e.target.search.value.toLowerCase();
-    const filteredResults = cards.filter((item) =>
-      item.title.toLowerCase().includes(searchQuery)
-    );
-    setFilteredCards(filteredResults);
+
+    if (searchTerm) {
+      const matchingProduct = products.find((product) =>
+        product.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+
+      if (matchingProduct) {
+        router.push(`/product/${matchingProduct.id}`);
+        toast.success(" matching product found");
+      } else {
+        toast.error("No matching product found");
+      }
+    }
+    setSearchTerm("")
   };
 
   return (
-    <>
+    <div className="relative w-full">
+      {/* Search input form */}
       <form
+        className="flex h-10 w-full items-center justify-between relative"
         onSubmit={handleSearch}
-        className="flex-1 h-10 mx-4 hidden md:inline-flex items-center justify-between relative"
       >
         <input
           className="w-full px-4 py-2 rounded-l-md border-2 border-gray-300 hover:border-yellow-400 duration-300 text-black outline-none"
           name="search"
           placeholder="Search products..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)} // Update search term
         />
         <button
           type="submit"
@@ -45,8 +63,8 @@ const InputFiled = () => {
           <IoSearch size={20} color="white" />
         </button>
       </form>
-    </>
+    </div>
   );
 };
 
-export default InputFiled;
+export default InputField;

@@ -41,7 +41,7 @@ const Header = () => {
         </div>
 
         {/* Right side */}
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-5 ml-3 items-center">
           {session?.user ? (
             <div className="text-lightText flex items-center gap-3">
               {/* User Image */}
