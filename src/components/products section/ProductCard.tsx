@@ -4,9 +4,10 @@ import { MdOutlineFavoriteBorder } from "react-icons/md";
 import PriceFormat from "./PriceFormat";
 import AddToCartBtn from "../AddToCartBtn";
 import { Product } from "../../../type";
+import Link from "next/link";
 
 interface Props {
-  product:any;
+  product:any
 }
 
 export default function ProductCard({ product }: Props) {
@@ -14,6 +15,9 @@ export default function ProductCard({ product }: Props) {
     <div className="border border-gray-200 rounded-md overflow-hidden relative group">
       {/* product image */}
       <div className=" group overflow-hidden h-72 bg-[#F8F8F8] ">
+        <Link href={{pathname: `product/${product?.id}`,
+        query:{id:product?.id}
+      }}>
         <Image
           src={product?.images[0]}
           alt="product image"
@@ -22,6 +26,7 @@ export default function ProductCard({ product }: Props) {
           loading="lazy"
           className="w-full h-full object-contain group-hover:scale-110 duration-300 "
         />
+        </Link>
       </div>
       {/* discount and favourite icon */}
       <div className="absolute top-2 right-10 border border-black rounded-full px-3 group-hover:bg-black group-hover:text-white duration-200">
