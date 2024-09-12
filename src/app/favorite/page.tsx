@@ -8,7 +8,7 @@ import { addToCart, decreaseQuantity, increaseQuantity } from "../redux/blinkSli
 import { useEffect, useState } from "react";
 import { FaMinus, FaPlus } from "react-icons/fa";
 
-const FavoritePage = () => {
+const FavoritePage = ({product}:any) => {
   const { favorite } = useSelector((state: any) => state?.blink);
   const [availableProduct, setAvailableProduct] = useState(null);
 
