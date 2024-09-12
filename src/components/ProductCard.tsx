@@ -1,18 +1,14 @@
 import Image from "next/image";
 import { productType } from "../../type";
-import Container from "./Container";
 import Link from "next/link";
-import AddToCard from "./AddToCard";
-import { FaRegHeart } from "react-icons/fa";
-import { GoHeartFill } from "react-icons/go";
-import { IoHeart } from "react-icons/io5";
+import AddToCart from "./AddToCart";
 export interface Props {
   product: productType;
 }
 
 const ProductCard = ({ product }: Props) => {
   return (
-    <div className="border border-lightText hover:shadow-lg hover:shadow-black/30 duration-200 group rounded-md overflow-hidden">
+    <div className="border  border-lightText hover:shadow-lg hover:shadow-black/30 duration-200 group rounded-md overflow-hidden">
       <div className=" relative bg-gray-100 py-2">
         <Link
           href={{
@@ -25,7 +21,7 @@ const ProductCard = ({ product }: Props) => {
             alt="products Image"
             width={500}
             height={500}
-            className="w-full h-64 object-contain  hover:scale-110 duration-200 cursor-pointer"
+            className="w-full h-48 object-contain  hover:scale-110 duration-200 cursor-pointer"
           />
           <span className="absolute top-1 right-2 border border-amazone_light px-4 py-1 rounded-3xl text-sm font-semibold text-gray-700">
             {product?.discountPercentage}%
@@ -48,7 +44,7 @@ const ProductCard = ({ product }: Props) => {
             Catagories:{" "}
             <span className="font-semibold">{product?.category}</span>
           </p>
-          <AddToCard />
+          <AddToCart product={product} />
         </div>
       </div>
     </div>

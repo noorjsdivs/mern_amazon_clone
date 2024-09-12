@@ -1,10 +1,14 @@
+"use client";
 import { carticon, logo } from "@/assets";
 import Image from "next/image";
 import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoLocationSharp, IoSearch } from "react-icons/io5";
+import { useSelector } from "react-redux";
+import { StateType } from "../../../type";
 
 const Header = () => {
+  const { cart } = useSelector((state: StateType) => state.amazone);
   return (
     <div className="w-full bg-amazon_blue h-20 text-lightText">
       <div className="w-full mx-auto h-full inline-flex items-center md:justify-between gap-1 md:gap-3 px-4 ">
@@ -73,7 +77,7 @@ const Header = () => {
             className=" absolute top-2 right-5 w-4 h-4 text-base text-red-600
            flex items-center justify-center rounded-full"
           >
-            0
+            {cart?.length > 0 ? cart?.length : "0"}
           </span>
         </Link>
       </div>

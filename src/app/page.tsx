@@ -3,9 +3,11 @@ import ProductList from "@/components/ProductList";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="relative">
       <Banner />
-      <ProductList />
+      <div className="-mt-32">
+        <ProductList />
+      </div>
     </div>
   );
 };

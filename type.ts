@@ -32,3 +32,10 @@ export interface productType {
   warrantyInformation: string;
   weight: number;
 }
+
+export interface StateType {
+  amazone: {
+    cart: productType[];
+    userInfo: any;
+  };
+}
