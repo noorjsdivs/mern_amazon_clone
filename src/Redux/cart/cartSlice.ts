@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { productType } from "../../../type";
 import toast from "react-hot-toast";
+import { stat } from "fs";
 
 interface InitialType {
   cart: productType[];
@@ -37,12 +38,13 @@ const cartSlice = createSlice({
         }
       }
     },
-    clearCart: (state, action) => {
-      alert("clear cart");
+    deleteCartItem: (state, action) => {
+      const newArray = state.cart.filter(item => item?.id !== action.payload);
+      state.cart = newArray;
     },
   },
 });
 
 export default cartSlice.reducer;
-export const { addToCart, increaseQuantity, decreaseQuantity, clearCart } =
+export const { addToCart, increaseQuantity, decreaseQuantity, deleteCartItem } =
   cartSlice.actions;

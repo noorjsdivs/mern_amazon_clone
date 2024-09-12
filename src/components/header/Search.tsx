@@ -5,7 +5,6 @@ import { RiCloseFill } from "react-icons/ri";
 
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
-  console.log(inputValue);
 
   return (
     <div className="text-black rounded-md flex items-center">
