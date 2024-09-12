@@ -34,12 +34,20 @@ export interface productType {
 }
 
 export interface StateType {
-  user?: { user: object | null };
+  user?: { user: UserType | null };
   cart?: { cart: productType[] };
+  favorite: {favorite: productType[]}
 }
 
 export interface NavLink {
   title: string,
   link: string
+}
+
+export interface UserType {
+  name: string,
+  email: string,
+  image: string,
+  expires?: string,
 }
 

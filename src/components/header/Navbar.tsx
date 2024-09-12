@@ -40,6 +40,7 @@ const Navbar = () => {
             </Link>
           </li>
         ))}
+        <li className="font-bold text-yellow tracking-wider underline">please signin to access your cart!</li>
       </ul>
     </div>
   );

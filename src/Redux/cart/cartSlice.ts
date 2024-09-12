@@ -2,33 +2,47 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { productType } from "../../../type";
 import toast from "react-hot-toast";
 
-const initialState = {
-    cart: []
+interface InitialType {
+  cart: productType[];
 }
 
+const initialState: InitialType = {
+  cart: [],
+};
+
 const cartSlice = createSlice({
-    name: 'cart Slice',
-    initialState,
-    reducers: {
-        addToCart: (state, action: PayloadAction<productType>) => {
-            const existingProduct = state.cart.find(
-              (obj: productType, index) => obj?.id === action.payload?.id
-            );
-      
-            if (!existingProduct) {
-              state.cart.push({ ...action?.payload, quantity: 1 });
-      
-              toast.success("Cart added!");
-            } else {
-              existingProduct.quantity! += 1;
-              toast.success("Increase product quantity!");
-            }
-          },
-        removeToCart: (state, action) => {
-            alert('remove to cart')
+  name: "cart Slice",
+  initialState,
+  reducers: {
+    addToCart: (state, action) => {
+      state.cart.push(action.payload);
+    },
+    increaseQuantity: (state, action) => {
+      const existProduct = state.cart.find(
+        (item) => item?.id === action.payload
+      );
+      if (existProduct) {
+        if (existProduct?.quantity! < existProduct?.stock) {
+          existProduct.quantity! += 1;
         }
-    }
-})
+      }
+    },
+    decreaseQuantity: (state, action) => {
+      const existProduct = state.cart.find(
+        (item) => item?.id === action.payload
+      );
+      if (existProduct) {
+        if (existProduct?.quantity! > 1) {
+          existProduct.quantity! -= 1;
+        }
+      }
+    },
+    clearCart: (state, action) => {
+      alert("clear cart");
+    },
+  },
+});
 
 export default cartSlice.reducer;
-export const { addToCart, removeToCart} = cartSlice.actions;
+export const { addToCart, increaseQuantity, decreaseQuantity, clearCart } =
+  cartSlice.actions;

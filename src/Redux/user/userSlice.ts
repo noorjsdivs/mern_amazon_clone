@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { execOnce } from "next/dist/shared/lib/utils";
 
 const initialState = {
     user: null
@@ -10,10 +9,13 @@ const userSlice = createSlice({
     initialState,
     reducers: {
         addUser: (state, action) => {
-            alert('add user')
+            state.user = action.payload;
+        },
+        removeUser : (state, action) => {
+            state.user = null;
         }
     }
 })
 
 export default userSlice.reducer;
-export const {addUser} = userSlice.actions;
+export const {addUser, removeUser} = userSlice.actions;

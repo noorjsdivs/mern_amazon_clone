@@ -4,7 +4,6 @@ import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
 import FavoriteButton from "./FavoriteButton";
 
-
 interface Props {
   product: productType;
 }
@@ -24,17 +23,22 @@ const ProductCart = ({ product }: Props) => {
           <p className="px-2 text-sm border border-primary rounded-full group-hover:bg-primary group-hover:text-white duration-300">
             {product?.discountPercentage}%
           </p>
-          <FavoriteButton/>
+          <FavoriteButton product={product} />
         </div>
       </div>
       <div className="flex flex-col gap-2 p-4">
-        <h1 className="text-2xl font-bold h-16 line-clamp-2">{product?.title}</h1>
+        <h1 className="text-2xl font-bold h-16 line-clamp-2">
+          {product?.title}
+        </h1>
         <p className="line-clamp-3 h-[72px]">{product.description}</p>
         <p className="text-xl font-bold">${product?.price}</p>
-        <p>
-          category: <span className="font-bold">{product?.category}</span>
+        <p className="flex justify-between">
+          <span>
+            category: <span  className="font-bold">{product?.category}</span>
+          </span>{" "}
+          <span className="px-2 rounded-lg bg-darkYellow/20 ">In Stock : {product?.stock}</span>
         </p>
-        <AddToCartButton/>
+        <AddToCartButton product={product} />
       </div>
     </div>
   );

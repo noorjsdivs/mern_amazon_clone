@@ -36,8 +36,8 @@ function Banner() {
             minWidth: 768,
           },
         ]}
-        speed={2000} // Speed of the transition between slides (optional)
-        easing="linear"
+        speed={5000} // Speed of the transition between slides (optional)
+        easing="ease-in-out"
         infinite={true}
         // autoplay={false} // Disable default autoplay
       >

@@ -1,18 +1,31 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { productType } from "../../../type";
 
-const initialState = {
-    marked: []
+interface FavoriteType {
+  favorite: productType[];
 }
 
-const markedSlice = createSlice({
-    name: 'favorite slice',
-    initialState,
-    reducers: {
-        addToMarded: (state, action) => {
-            alert('add to marked');
-        }
-    }
-})
+const initialState: FavoriteType = {
+  favorite: [],
+};
 
-export default markedSlice.reducer;
-export const {addToMarded} = markedSlice.actions;
+const favoriteSlice = createSlice({
+  name: "favorite slice",
+  initialState,
+  reducers: {
+    addToFavorite: (state, action) => {
+      state.favorite.push(action.payload);
+    },
+    removeToFavorite: (state, action) => {
+      state.favorite = state.favorite.filter(
+        (item) => item.id !== action.payload
+      );
+    },
+    clearFavorite: (state, action) => {
+        state.favorite = [];
+    }
+  },
+});
+
+export default favoriteSlice.reducer;
+export const { addToFavorite, removeToFavorite, clearFavorite } = favoriteSlice.actions;
