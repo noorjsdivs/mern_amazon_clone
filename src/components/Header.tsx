@@ -55,9 +55,9 @@ const Header = () => {
                                     {/* user */}
                                     {
                                           session?.user ?
-                                                <div className='mt-4 lg:mt-0 flex items-center gap-4'>
+                                                <div className='mt-4 lg:mt-0 flex items-center gap-2'>
                                                       <div className="rounded-full py-1 px-1">
-                                                            <Image className="h-8 w-8 rounded-full" src={session?.user?.image!} alt="userImage" width={200} height={200} />
+                                                            <Image className="h-9 w-9 rounded-full" src={session?.user?.image!} alt="userImage" width={200} height={200} />
                                                       </div>
                                                       <div>
                                                             <h1 className='text-xs lg:text-[14px]'>Hello, <span>{session?.user.name}</span></h1>

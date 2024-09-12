@@ -35,10 +35,13 @@ const AddToCartButton = ({ className, product }: Props) => {
             toast.success("Quantity increased successfully!")
       }
       const handleMinus = () => {
-            if (existingProduct?.quantity! > 1) {
+            if (existingProduct?.quantity > 1) {
                   dispatch(decrease(product?.id))
                   toast.success("Quantity decrease successfully!")
+            } else {
+                  toast.error("Unable to decrease quantity!");
             }
+
       }
 
       return (

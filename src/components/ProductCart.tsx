@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { MdFavoriteBorder } from 'react-icons/md';
 import AddToCartButton from './AddToCartButton';
 import PriceFormat from './PriceFormate';
+import { ProductType } from '@/type';
 
-const ProductCart = ({ product }) => {
+const ProductCart = ({ product }: { product: ProductType }) => {
 
 
       return (

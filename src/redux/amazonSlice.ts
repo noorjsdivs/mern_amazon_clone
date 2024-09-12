@@ -20,11 +20,11 @@ export const amazonSlice = createSlice({
 
       reducers: {
             addToCart: (state, action) => {
-                  const shofyProduct = state.cart.find((item) => item.id === action.payload.id)
-                  if (shofyProduct) {
+                  const amazonProduct = state.cart.find((item) => item.id === action.payload.id)
+                  if (amazonProduct) {
                         toast.error("Product already exit");
                         // @ts-ignore
-                        shofyProduct.quantity! += 1
+                        amazonProduct.quantity! += 1
                   } else {
                         // @ts-ignore
                         state.cart.push({ ...action.payload, quantity: 1 })
@@ -37,18 +37,18 @@ export const amazonSlice = createSlice({
             },
 
             increase: (state, action) => {
-                  const shofyProduct = state.cart.find((item) => item.id === action.payload)
-                  if (shofyProduct) {
+                  const amazonProduct = state.cart.find((item) => item.id === action.payload)
+                  if (amazonProduct) {
                         //@ts-ignore
-                        shofyProduct.quantity! += 1
+                        amazonProduct.quantity! += 1
                   }
             },
 
             decrease: (state, action) => {
-                  const shofyProduct = state.cart.find((item) => item.id === action.payload)
-                  if (shofyProduct) {
+                  const amazonProduct = state.cart.find((item) => item.id === action.payload)
+                  if (amazonProduct) {
                         //@ts-ignore
-                        shofyProduct.quantity! -= 1
+                        amazonProduct.quantity! -= 1
                   }
             },
 

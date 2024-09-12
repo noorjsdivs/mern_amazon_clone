@@ -27,7 +27,7 @@ const ProductImage = ({ product }: { product: ProductType }) => {
                         ))}
                   </div>
                   <div className="lg:border-r-2 border-amazonYellow ">
-                        <Image className="lg:h-[400px] lg:w-96" src={imageClick} alt="img" height={200} width={200} />
+                        <Image className="lg:h-[400px] lg:w-96 px-8 py-6" src={imageClick} alt="img" height={200} width={200} />
                   </div>
             </div>
       );

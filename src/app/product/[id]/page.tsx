@@ -3,7 +3,6 @@ import AddToCartButton from "@/components/AddToCartButton";
 import Container from "@/components/Container";
 import PriceFormat from "@/components/PriceFormate";
 import ProductImage from "@/components/ProductImage";
-import SingleProdeuctPage from "@/components/SingleProdeuctPage";
 import { getData } from "@/hooks";
 import { ProductType } from "@/type";
 import { Metadata } from "next";
