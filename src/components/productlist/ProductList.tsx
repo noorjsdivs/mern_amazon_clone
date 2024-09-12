@@ -1,10 +1,11 @@
-"use client"
-import { Product } from "../../../type";
+
+
+import { ProductType } from "../../../type";
 import Container from "../Container"
 import ProductCard from "../ProductCard"
 
 interface ProductsArray {
-  products: Product[];
+  products: ProductType[];
 }
 
 const ProductList = ({products}: ProductsArray) => {

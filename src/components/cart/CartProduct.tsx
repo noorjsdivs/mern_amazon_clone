@@ -8,9 +8,10 @@ import { twMerge } from "tailwind-merge"
 import { useDispatch } from "react-redux"
 import { deleteBtn } from "@/redux/storeSlice"
 import toast from "react-hot-toast"
+import { ProductType } from "../../../type"
 
 
-const CartProduct = ({product}) => {
+const CartProduct = ({product}:{ product: ProductType }) => {
     const dispatch = useDispatch()
 
   return (

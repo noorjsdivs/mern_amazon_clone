@@ -3,9 +3,18 @@ import Container from "../Container";
 import CartProduct from "./CartProduct";
 import Link from "next/link";
 import BillingSummary from "./BillingSummary";
+import { ProductType } from "../../../type";
+
+
+interface StateType {
+  shopping: {
+    cart: ProductType[]; // Assuming favouriteCart is an array of products
+  };
+}
+
 
 const CartProducts = () => {
-  const selector = useSelector((state) => state.shopping.cart);
+  const selector = useSelector((state:StateType) => state.shopping.cart);
   console.log("cartproduct", selector);
   return (
     <Container className="mt-6">

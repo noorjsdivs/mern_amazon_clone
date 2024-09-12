@@ -1,6 +1,9 @@
-import React from 'react'
+interface Props{
 
-const PriceFormate = ({amount}) => {
+  amount:number
+}
+
+const PriceFormate = ({amount}:Props) => {
 
     const formatePrice = new Number(amount).toLocaleString("en-US", {
         style:"currency",

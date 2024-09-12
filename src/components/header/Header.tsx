@@ -7,10 +7,35 @@ import { signIn, useSession } from "next-auth/react";
 import { useSelector } from "react-redux";
 import BottomHeader from "./BottomHeader";
 import Link from "next/link";
+import { ProductType } from "../../../type";
+
+
+interface StateType {
+  shopping: {
+    cart: ProductType[]; // Assuming favouriteCart is an array of products
+  };
+}
+
+
+
 
 const Header = () => {
   const { data: session } = useSession();
-  const selector = useSelector((state) => state.shopping.cart);
+  const selector = useSelector((state:StateType) => state.shopping.cart);
+
+  
+  const favourite = useSelector((state) => state.shopping.favouriteCart);
+  
+
+
+
+
+
+
+
+
+
+
 
   return (
     <header className="bg-white sticky top-0 z-50">
@@ -71,15 +96,15 @@ const Header = () => {
             </div>
           )}
 
-          <div className="text-lightText flex gap-1 hidden md:block items-center border border-transparent hover:border-white transition-all duration-300 px-3">
+          <Link href={"/favourite"} className="text-lightText flex gap-1 hidden md:block items-center border border-transparent hover:border-white transition-all duration-300 px-3">
             <div className="relative">
               <h1>Marked</h1>
               <span>& Favourite</span>
             </div>
             <span className="absolute ml-16 top-3 border border-yellow-400 h-5 w-5 text-center items-center justify-center text-sm">
-              7
+            {favourite.length > 0 ? favourite.length : "0"}
             </span>
-          </div>
+          </Link>
 
           {/* Cart */}
           <Link href={"/cart"}>

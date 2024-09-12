@@ -1,19 +1,10 @@
 
-import { twMerge } from "tailwind-merge";
+
 import { calculateCartTotals } from "../lib/utility";
 import PriceFormate from "../PriceFormate";
 
 
 const BillingSummary = () => {
-    // const selector = useSelector((state) => state.shopping.cart);
-    // const [prices, setPrices] = useState([]);
-    
-  
-    // useEffect(() => {
-    //   const collectedPrices = selector.map((item) => parseInt(item.price));
-    //   setPrices(collectedPrices);
-    // }, [selector]);
-
 
     const { totalAmt } = calculateCartTotals();
     console.log("totlaprice", totalAmt)

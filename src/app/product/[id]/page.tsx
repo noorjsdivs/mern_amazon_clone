@@ -1,9 +1,12 @@
 "use client"
 import { getFetchData } from '@/components/helper';
 import SinglePage from '@/components/SinglePage'
-
-
-const ProductPage = async({params}) => {
+interface Props {
+  params: {
+    id: string;
+  };
+}
+const ProductPage = async({params}:Props) => {
     const {id} = params;
     const endPoint = `https://dummyjson.com/products/${id}`;
     const product = await getFetchData(endPoint)
