@@ -1,4 +1,5 @@
 
+import AddToCartButton from "@/components/AddToCartButton";
 import Container from "@/components/Container";
 import { getFetchData } from "@/components/Hooks";
 import PriceFormat from "@/components/PriceFormate";
@@ -79,7 +80,7 @@ const ProductPage = async ({ params }: any) => {
                          <h1 className="mt-2 text-sm md:text-base lg:text-lg">Brand: {product?.brand}</h1>
                          <h1 className="mt-2 text-sm md:text-base lg:text-lg">Category: {product?.category}</h1>
                          <div className="w-44 mt-2 lg:mb-0 mb-4">
-                              <button className="px-10 py-2 bg-yellow-300 text-gray-500">Add To Cart</button>
+                              <AddToCartButton className="" product={product}/>
                          </div>
                     </div>
 

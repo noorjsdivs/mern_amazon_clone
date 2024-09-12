@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import BottomHeader from "@/components/BottomHeader";
 import LayOut from "@/components/LayOut";
 import Footer from "@/components/Footer";
+import { Toaster } from 'react-hot-toast';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,10 +36,16 @@ export default function RootLayout({
 
       >
         <LayOut>
-          <Header />
-          <BottomHeader />
+          <div className="sticky z-50 top-0">
+            <Header />
+            <BottomHeader />
+          </div>
           {children}
           <Footer />
+          <Toaster
+            position="top-center"
+            reverseOrder={false}
+          />
         </LayOut>
       </body>
     </html>

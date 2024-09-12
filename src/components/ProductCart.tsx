@@ -3,6 +3,8 @@
 import Link from "next/link";
 import Container from "./Container";
 import Image from "next/image"
+import AddToCartButton from "./AddToCartButton";
+
 const ProductCart = ({ product }) => {
      return (
           <div>
@@ -15,9 +17,11 @@ const ProductCart = ({ product }) => {
                     <div className="py-4 px-4">
                          <h1 className="h-10 font-semibold">{product?.title}</h1>
                          <h1 className="">{product?.category}</h1>
-                         <h1 className="">$   {product?.price}</h1>
+                         <h1 className="mt-2 text-[18px] text-green-500">$   {product?.price}</h1>
+                       
                          <div className="mt-4">
-                              <button className="bg-yellow-200 rounded-full hover:bg-amazonYellow hover:text-white duration-300 text-gray-400 py-2 w-full">Add To Cart</button>
+                              {/* <button className="bg-yellow-200 rounded-full hover:bg-amazonYellow hover:text-white duration-300 text-gray-400 py-2 w-full">Add To Cart</button> */}
+                              <AddToCartButton product={product}/>
                          </div>
                     </div>
 

@@ -5,12 +5,12 @@ import { IoLocation, IoSearch } from "react-icons/io5"; // Import the search ico
 import InputFiled from "./InputFiled";
 import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
+import { useSelector, useDispatch } from 'react-redux'
 
 const Header = () => {
   const { data: session } = useSession();
-  // console.log("this is session", session);
+  const { cart } = useSelector((state) => state.amazon)
 
-  
   return (
     <div className="flex bg-amazonBlue p-1 px-10 text-white justify-between items-center">
       {/* Left side (logo and location) */}
@@ -42,7 +42,7 @@ const Header = () => {
           <>
             {" "}
             <div className="text-lightText flex gap-2 items-center border border-transparent hover:border-white transition-all duration-300 font-medium px-2">
-              <Image className="h-10 w-10 rounded-full" src={session?.user.image!} alt="useImage" height={200} width={200}/>
+              <Image className="h-10 w-10 rounded-full" src={session?.user.image!} alt="useImage" height={200} width={200} />
               <div>
                 <p className="text-sm">Hello, {session.user.name}</p>
                 <h3>Account & List</h3>
@@ -73,14 +73,17 @@ const Header = () => {
           </span>
         </div>
         {/* cart */}
-        <div className="text-lightText flex gap-1 items-center border border-transparent hover:border-white transition-all duration-300 px-3">
-          <div className="relative">
-            <Image className="w-14" src={cartIcon} alt="image" />
+
+        <Link href={"/cart"}>
+          <div className="text-lightText flex gap-1 items-center border border-transparent hover:border-white transition-all duration-300 px-3">
+            <div className="relative">
+              <Image className="w-14" src={cartIcon} alt="image" />
+            </div>
+            <span className="absolute  mb-7 text-yellow-600 ml-6    text-center items-center justify-center text-sm">
+              {cart?.length > 0 ? cart?.length : "o"}
+            </span>
           </div>
-          <span className="absolute  mb-7 text-yellow-600 ml-6    text-center items-center justify-center text-sm">
-            0
-          </span>
-        </div>
+        </Link>
       </div>
     </div>
   );
