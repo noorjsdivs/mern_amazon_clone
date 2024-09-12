@@ -30,10 +30,7 @@ const BottomHeader = () => {
       title: "sell",
       link: "/sell",
     },
-    {
-      title: "log out",
-      link: "/log out",
-    },
+    
   ];
   return (
     <Container>
@@ -46,6 +43,7 @@ const BottomHeader = () => {
             </p>
           </Link>
         ))}
+        <p className="text-sm text-orange-500 font-semibold tracking-wide">Sign in, to view cart.!</p>
       </div>
     </Container>
   );
