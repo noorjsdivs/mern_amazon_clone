@@ -5,9 +5,10 @@ import PriceFormat from "./PriceFormat";
 import AddToCartBtn from "../AddToCartBtn";
 import { Product } from "../../../type";
 import Link from "next/link";
+import { paymentImage } from "@/assets";
 
 interface Props {
-  product:any
+  product: any;
 }
 
 export default function ProductCard({ product }: Props) {
@@ -15,17 +16,20 @@ export default function ProductCard({ product }: Props) {
     <div className="border border-gray-200 rounded-md overflow-hidden relative group">
       {/* product image */}
       <div className=" group overflow-hidden h-72 bg-[#F8F8F8] ">
-        <Link href={{pathname: `product/${product?.id}`,
-        query:{id:product?.id}
-      }}>
-        <Image
-          src={product?.images[0]}
-          alt="product image"
-          width={600}
-          height={600}
-          loading="lazy"
-          className="w-full h-full object-contain group-hover:scale-110 duration-300 "
-        />
+        <Link
+          href={{
+            pathname: `product/${product?.id}`,
+            query: { id: product?.id },
+          }}
+        >
+          <Image
+            src={product?.images[0]}
+            alt="product image"
+            width={600}
+            height={600}
+            loading="lazy"
+            className="w-full h-full object-contain group-hover:scale-110 duration-300 "
+          />
         </Link>
       </div>
       {/* discount and favourite icon */}
@@ -49,7 +53,8 @@ export default function ProductCard({ product }: Props) {
               {product?.category}
             </span>
           </p>
-            <AddToCartBtn product={product} className=""/>
+          <AddToCartBtn product={product} className="" />
+          
         </div>
       </div>
     </div>
