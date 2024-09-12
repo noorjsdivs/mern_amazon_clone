@@ -32,6 +32,7 @@ const AddToCartBtn = ({ product }: any) => {
                 toast.error("Cannot deacrese less then 1");
               } else {
                 dispatch(decreaseQuantity(availableProduct));
+                toast.success("Quantity decrease.!");
               }
             }}
             className="cursor-pointer"

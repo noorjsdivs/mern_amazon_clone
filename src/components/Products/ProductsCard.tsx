@@ -22,13 +22,14 @@ const ProductsCard = async () => {
                 href={{
                   pathname: `products/${item?.id}`,
                   query: { id: item?.id },
-                }}
+                }} scroll={true}
               >
                 <Image
                   src={item?.images[0]}
                   alt="product image"
                   height={400}
                   width={200}
+                  loading="lazy"
                   className="w-full h-full object-contain hover:scale-110 transition-all duration-300"
                 />
                 

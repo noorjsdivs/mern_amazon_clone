@@ -6,6 +6,7 @@ import BottomHeader from "@/components/Home/Header/BottomHeader";
 import Footer from "@/components/Home/Footer";
 import Layout from "@/Layout/Layout";
 import { Toaster } from "react-hot-toast";
+import { ScrollRestoration } from "next-scroll-restoration";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,12 +34,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollRestoration />
         <Layout>
           <TopHeader />
           <BottomHeader />
           {children}
           <Footer />
-          <Toaster position="bottom-right"/>
+          <Toaster position="bottom-right" />
         </Layout>
       </body>
     </html>

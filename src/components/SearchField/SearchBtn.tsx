@@ -9,8 +9,8 @@ import { HiOutlineSearch } from "react-icons/hi";
 const SearchBtn = () => {
     const [searchQuery, setSearchQuery] = useState("");
     const [products, setProducts] = useState([]);
-    const [isInputFocused, setIsInputFocused] = useState(false); // New state to manage input focus
-    const searchContainerRef = useRef(null); // Ref to detect clicks outside
+    const [isInputFocused, setIsInputFocused] = useState(false); 
+    const searchContainerRef = useRef(null); 
     useEffect(() => {
       const getData = async () => {
         const endpoint = "https://dummyjson.com/products";
@@ -32,7 +32,7 @@ const SearchBtn = () => {
       );
       setFilteredProducts(filtered);
     }, [searchQuery]);
-    // Effect to detect click outside
+ 
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
         if (
@@ -40,7 +40,7 @@ const SearchBtn = () => {
           // @ts-ignore
           !searchContainerRef.current.contains(event.target)
         ) {
-          setIsInputFocused(false); // Hide the list if clicking outside
+          setIsInputFocused(false); 
         }
       };
   
@@ -65,7 +65,7 @@ const SearchBtn = () => {
     {searchQuery && (
       <MdOutlineClose
         onClick={() => setSearchQuery("")}
-        className="text-xl text-amazonLight hover:text-red-600 absolute right-14 duration-200 cursor-pointer"
+        className="text-xl  hover:text-red-600 absolute right-14 duration-200 cursor-pointer"
       />
     )}
     <span className="w-12 h-full bg-amazonOrange hover:bg-amazonOrangeDark duration-200 cursor-pointer text-black text-2xl flex items-center justify-center absolute right-0 rounded-tr-md rounded-br-md">
@@ -77,7 +77,7 @@ const SearchBtn = () => {
           <div className="flex flex-col">
             {filteredProducts?.map((item: any) => (
               <Link
-                key={item?.id}
+                key={item?.id}                                                                                                      
                 href={{
                   pathname: `/products/${item?.id}`,
                   query: { id: item?.id },
@@ -102,77 +102,7 @@ const SearchBtn = () => {
         )}
       </div>
     )}
-    {/* {searchQuery && (
-<div className="absolute left-0 top-12 w-full mx-auto h-auto max-h-96 bg-gray-200 rounded-lg overflow-y-scroll cursor-pointer text-black">
-  {filteredProducts.length > 0 ? (
-    <>
-      {searchQuery &&
-        filteredProducts.map((item: StoreProduct) => (
-          <Link
-            href={{
-              pathname: `/${item._id}`,
-              query: {
-                _id: item._id,
-                title: item.title,
-                brand: item.brand,
-                category: item.category,
-                description: item.description,
-                image: item.image,
-                isNew: item.isNew,
-                oldPrice: item.oldPrice,
-                price: item.price,
-              },
-            }}
-            onClick={() => setSearchQuery("")}
-            key={item._id}
-            className="w-full border-b-[1px] border-b-gray-400 flex items-center gap-4"
-          >
-            <div>
-              <img
-                className="w-24"
-                src={item.image}
-                alt="productImage"
-              />
-            </div>
-            <div>
-              <p className="text-xs -mb-1">
-                {item.brand}_{item.category}
-              </p>
-              <p className="text-lg font-medium">{item.title}</p>
-              <p className="text-xs">
-                {item.description.substring(0, 100)}
-              </p>
-              <p className="text-sm flex items-center gap-1">
-                price:{" "}
-                <span className="font-semibold">
-                  <FormattedPrice amount={item.price} />
-                </span>
-                <span className="text-gray-600 line-through">
-                  <FormattedPrice amount={item.oldPrice} />
-                </span>
-              </p>
-            </div>
-            <div className="flex-1 text-right px-4">
-              <p className="text-base font-semibold animate-bounce text-amazonBlue">
-                Save{" "}
-                <FormattedPrice
-                  amount={item.oldPrice - item.price}
-                />
-              </p>
-            </div>
-          </Link>
-        ))}
-    </>
-  ) : (
-    <div className="py-10 bg-gray-50 flex items-center justify-center">
-      <p className="text-xl font-semibold animate-bounce">
-        Nothing is matches with your search keywords. Please try
-        again
-      </p>
-    </div>
-  )}
-</div>
-)} */}
+    
   </div>
   )
 }

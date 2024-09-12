@@ -6,13 +6,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { HiOutlineShoppingBag } from "react-icons/hi";
-import { IoCloseSharp, IoLocation, IoSearch } from "react-icons/io5";
+import { IoLocation } from "react-icons/io5";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 import { useSelector } from "react-redux";
 
 const TopHeader = () => {
   const { cart, favorite } = useSelector((state: any) => state.blink);
-  const [searchValue, setSearchValue] = useState("");
+
+
+  const {data:session} = useSession();
 
   return (
     <Container className="sticky top-0 z-20">
@@ -33,28 +36,22 @@ const TopHeader = () => {
           </div>
         </div>
         <div className="w-[700px] relative">
-          {/* <input
-            type="text"
-            placeholder="Search products..."
-            className="outline-none rounded-l-md h-10 px-7 w-[680px]  text-black placeholder:text-gray-500"
-            value={searchValue}
-            onChange={(e) => setSearchValue(e.target.value)}
-          />
-          {searchValue && (
-            <span className="absolute top-2 right-14 cursor-pointer text-red-500" onClick={() => setSearchValue("")}>
-              <IoCloseSharp size={23} />
-            </span>
-          )}
-          <span className="absolute top-0 right-0  flex items-center justify-center bg-orange-600 h-10 w-12  rounded-r-md">
-            <IoSearch size={25} />
-          </span> */}
           <SearchBtn />
         </div>
         <div className="flex items-center gap-5">
-          <div>
+          {
+            session?.user ? <div onClick={() => signOut()} className="cursor-pointer">
+            <p className="text-xs"> Hello, {session?.user?.name}</p>
+            <p className="font-bold">Logout</p>
+          </div>
+          : 
+
+          <div onClick={() => signIn()} className="cursor-pointer">
             <p className="text-xs"> Hello, sign in</p>
             <p className="font-bold">Accounts & Lists</p>
           </div>
+          
+          }
           <div>
             <p className="font-light">Returns</p>
             <p className="font-bold">& Orders</p>
