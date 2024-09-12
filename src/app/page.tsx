@@ -3,7 +3,7 @@ import ProductList from "@/components/ProductList";
 
 const HomePage = () => {
   return (
-    <div className="max-w-screen-2xl">
+    <div>
       <Banner />
       <ProductList />
     </div>

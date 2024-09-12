@@ -1,11 +1,34 @@
 export interface productType {
-  _id: number;
-  title: string;
-  description: string;
-  oldPrice: number;
-  price: number;
+  availabilityStatus: string;
   brand: string;
-  image: string;
-  isNew: boolean;
   category: string;
+  description: string;
+  quantity: number;
+  dimensions: {
+    depth: number;
+    height: number;
+    width: number;
+  };
+  discountPercentage: number;
+  id: number;
+  images: string[];
+  meta: {
+    createdAt: string;
+    updatedAt: string;
+    barcode: string;
+    qrCode: string;
+  };
+  minimumOrderQuantity: number;
+  price: number;
+  rating: number;
+  returnPolicy: string;
+  reviews: object[];
+  shippingInformation: string;
+  sku: string;
+  stock: number;
+  tags: string[];
+  thumbnail: string;
+  title: string;
+  warrantyInformation: string;
+  weight: number;
 }

@@ -70,7 +70,7 @@ const Header = () => {
         >
           <Image src={carticon} alt="cartIcons" className="w-12 object-cover" />
           <span
-            className=" absolute top-2 right-5 w-4 h-4 text-sm bg-amazon_yellow text-amazon_dark
+            className=" absolute top-2 right-5 w-4 h-4 text-base text-red-600
            flex items-center justify-center rounded-full"
           >
             0

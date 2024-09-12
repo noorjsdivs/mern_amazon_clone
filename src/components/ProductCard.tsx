@@ -1,62 +1,57 @@
 import Image from "next/image";
 import { productType } from "../../type";
 import Container from "./Container";
-import { FaStar } from "react-icons/fa";
-import AddToCart from "./button/AddToCart";
-
+import Link from "next/link";
+import AddToCard from "./AddToCard";
+import { FaRegHeart } from "react-icons/fa";
+import { GoHeartFill } from "react-icons/go";
+import { IoHeart } from "react-icons/io5";
 export interface Props {
   product: productType;
 }
 
-const SideBar = () => {
-  return (
-    <div className=" absolute right-0 bottom-12 w-full bg-gray-300 translate-y-20 overflow-hidden hover:translate-y-0">
-      <div>
-        <p>Compaire</p>
-      </div>
-    </div>
-  );
-};
-
 const ProductCard = ({ product }: Props) => {
   return (
-    <Container className=" border border-lightText hover:shadow-lg hover:shadow-black/20 duration-200  overflow-hidden">
-      <div className="relative">
-        <div className="">
+    <div className="border border-lightText hover:shadow-lg hover:shadow-black/30 duration-200 group rounded-md overflow-hidden">
+      <div className=" relative bg-gray-100 py-2">
+        <Link
+          href={{
+            pathname: `/products/${product?.id}`,
+            query: { id: product?.id },
+          }}
+        >
           <Image
-            src={product?.image}
-            alt="product_image"
+            src={product?.images[0]}
+            alt="products Image"
             width={500}
             height={500}
-            className="w-full h-48 object-contain cursor-pointer duration-200 "
+            className="w-full h-64 object-contain  hover:scale-110 duration-200 cursor-pointer"
           />
-          <p className=" absolute top-0 right-1 text-gray-500 text-sm font-normal tracking-wide italic">
-            {product?.category}
+          <span className="absolute top-1 right-2 border border-amazone_light px-4 py-1 rounded-3xl text-sm font-semibold text-gray-700">
+            {product?.discountPercentage}%
+          </span>
+        </Link>
+      </div>
+      {/* description */}
+      <div className="px-2 py-2">
+        <div className="flex flex-col gap-y-1">
+          <p className="text-base font-semibold text-amazon_dark tracking-wide">
+            {product?.title}
           </p>
-          <SideBar />
-        </div>
-        {/* description */}
-        <div className="px-2 py-4 flex flex-col gap-y-2">
-          <div className="flex items-center justify-between gap-5 ">
-            <h2 className="text-sm font-semibold text-amazone_light">
-              {product?.title.slice(0, 15)}...
-            </h2>
-            <p className="text-sm text-amazone_light font-semibold">
-              ${product?.price}
-            </p>
-          </div>
-          <p>{product?.description.slice(0, 40)}...</p>
-          <div className="flex items-center text-amazon_yellow">
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-            <FaStar />
-          </div>
-          <AddToCart>Add To Card</AddToCart>
+          <p className="text-sm text-gray-700">
+            {product?.description.slice(0, 52)}...
+          </p>
+          <p className="text-base text-amazon_dark font-semibold">
+            ${product?.price}
+          </p>
+          <p className="text-sm">
+            Catagories:{" "}
+            <span className="font-semibold">{product?.category}</span>
+          </p>
+          <AddToCard />
         </div>
       </div>
-    </Container>
+    </div>
   );
 };
 
