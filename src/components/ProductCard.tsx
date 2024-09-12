@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import AddToCartBtn from "./AddToCartBtn";
 import PriceFormat from "./PriceFormat";
+import ProductIcon from "./ProductIcon";
 // import ProductIcon from "./ProductIcon";
 
 interface Props {
@@ -31,23 +32,23 @@ const ProductCard = ({ product }: Props) => {
             loading="lazy"
             className="w-full h-full object-contain bg-[#f8f8f8] group-hover:scale-110 duration-200 overflow-hidden"
           />
-          {/* <ProductIcon
+          <ProductIcon
             discountPercentage={product?.discountPercentage}
-            product={product}
-          /> */}
+            // product={product}
+          />
         </Link>
       </div>
       <div className="flex flex-col py-2 px-4 gap-2 justify-between">
         <div className="flex flex-col gap-1 h-36">
-          <h2 className=" line-clamp-1">{product?.title}title</h2>
+          <h2 className=" line-clamp-1 text-black/80 font-bold">{product?.title}</h2>
           <p className="text-sm text-amazonBlue/90 line-clamp-3">
             {product?.description}
           </p>
-          <p className="font-semibold">
+          <p className="font-semibold text-black/80">
             <PriceFormat amount={product?.price} />
           </p>
-          <p className="text-sm">
-            Category: <span className="font-semibold">{product?.category}</span>
+          <p className="text-sm text-slate-500">
+            Category: <span className="font-semibold text-black/70">{product?.category}</span>
           </p>
         </div>
         <AddToCartBtn  />

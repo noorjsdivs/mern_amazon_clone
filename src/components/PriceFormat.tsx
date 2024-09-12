@@ -1,4 +1,5 @@
-// import { cn } from "@/lib/utils";
+
+import { cn } from "@/lib/utils";
 
 interface Props {
   amount?: number;
@@ -11,7 +12,7 @@ const PriceFormat = ({ amount, className }: Props) => {
     currency: "USD",
     minimumFractionDigits: 2,
   });
-  return <span className={(className)}>{formattedAmount}</span>;
+  return <span className={cn(className)}>{formattedAmount}</span>;
 };
 
 export default PriceFormat;
