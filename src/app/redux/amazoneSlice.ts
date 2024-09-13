@@ -43,9 +43,6 @@ export const amazoneSlice = createSlice({
 
       if (existingProduct) {
         existingProduct.quantity! -= 1;
-        toast.success(
-          `${existingProduct?.title.slice(0, 10)} deleted successfully`
-        );
       }
     },
   },
