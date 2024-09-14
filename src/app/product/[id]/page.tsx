@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 };
 
 
+
 const ProductPage = async ({ params }: { params: ProductType }) => {
       const { id } = params;
       const endpoint = `https://dummyjson.com/products/${id}`;
