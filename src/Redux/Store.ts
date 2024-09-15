@@ -5,6 +5,14 @@ import favoriteReducer from "@/Redux/favorite/favoriteSlice";
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
+import {
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
 
 const cartPersistConfig = {
   key: "cart",
@@ -41,6 +49,12 @@ const store = configureStore({
     user: userPersistedReducer,
     favorite: favoritePersistedReducer,
   },
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware({
+  //     serializableCheck: {
+  //       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+  //     },
+  //   }),
 });
 
 const persistor = persistStore(store);

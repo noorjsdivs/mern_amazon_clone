@@ -36,10 +36,10 @@ function Banner() {
             minWidth: 768,
           },
         ]}
-        speed={5000} // Speed of the transition between slides (optional)
+        speed={2000} // Speed of the transition between slides (optional)
         easing="ease-in-out"
-        infinite={true}
-        // autoplay={false} // Disable default autoplay
+        infinite={false}
+        
       >
         <div className="w-screen h-[80vh]">
           <Image src={bannerImgOne} alt="image 1" />

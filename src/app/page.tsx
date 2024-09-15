@@ -3,14 +3,12 @@ import ProductList from "@/components/ProductList";
 import { getData } from "@/helper";
 
 export default async function Home() {
-  const {products} = await getData('https://dummyjson.com/products');
+  const { products } = await getData("https://dummyjson.com/products");
 
   return (
-    
     <div>
-      <Banner/>
-      <ProductList products = {products}/>
-      
+      <Banner />
+      <ProductList products={products} />
     </div>
   );
 }

@@ -3,12 +3,15 @@ import { productType } from "../../type";
 import Image from "next/image";
 import AddToCartButton from "./AddToCartButton";
 import FavoriteButton from "./FavoriteButton";
+import PriceFormate from "./PriceFormate";
 
 interface Props {
   product: productType;
 }
 
 const ProductCart = ({ product }: Props) => {
+  const discount = (product?.price/100) * product?.discountPercentage;
+  const actualPrice = discount + product?.price;
   return (
     <div className="border border-primary/30 bg bg-gray-50 rounded-lg cursor-pointer ">
       <div className="p-5  relative group">
@@ -30,13 +33,18 @@ const ProductCart = ({ product }: Props) => {
         <h1 className="text-2xl font-bold h-16 line-clamp-2">
           {product?.title}
         </h1>
-        <p className="line-clamp-3 h-[72px]">{product.description}</p>
-        <p className="text-xl font-bold">${product?.price}</p>
+        <p className="line-clamp-3 h-[72px] text-secondary/75 font-medium">{product.description}</p>
+        <div className="flex items-end gap-2">
+          <p className="text-xl font-bold">${product?.price}</p>
+          <s  className="text-sm text-gray-600"><PriceFormate price={actualPrice}/></s>
+        </div>
         <p className="flex justify-between">
-          <span>
-            category: <span  className="font-bold">{product?.category}</span>
+          <span className="text-secondary/75">
+            category: <span className="font-bold">{product?.category}</span>
           </span>{" "}
-          <span className="px-2 rounded-lg bg-darkYellow/20 ">In Stock : {product?.stock}</span>
+          <span className="px-2 rounded-lg bg-darkYellow/20 ">
+            In Stock : {product?.stock}
+          </span>
         </p>
         <AddToCartButton product={product} />
       </div>

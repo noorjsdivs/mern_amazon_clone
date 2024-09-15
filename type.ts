@@ -35,8 +35,8 @@ export interface productType {
 
 export interface StateType {
   user?: { user: UserType | null };
-  cart?: { cart: productType[] };
-  favorite: {favorite: productType[]}
+  cart?: { cart: productType[] | [] };
+  favorite: {favorite: productType[] | []}
 }
 
 export interface NavLink {

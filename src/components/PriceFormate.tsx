@@ -13,11 +13,11 @@ const PriceFormate = ({ price, className }: Props) => {
     maximumFractionDigits: 2,
   });
   return (
-    <div>
-      <p className={twMerge("font-semibold w-20 text-nowrap", className)}>
+    
+      <p className={twMerge(" w-20 text-nowrap", className)}>
         {FormatedPrice}
       </p>
-    </div>
+    
   );
 };
 

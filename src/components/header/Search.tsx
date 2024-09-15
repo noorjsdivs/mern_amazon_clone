@@ -7,7 +7,7 @@ const Search = () => {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <div className="text-black rounded-md flex items-center">
+    <div className="text-black rounded-md flex items-center overflow-hidden">
       <SelectCategory />
       <div className="h-full flex-1 relative">
         <input

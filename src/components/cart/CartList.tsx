@@ -18,7 +18,7 @@ const CartList = () => {
             ))}
           </div>
           <div className="lg:col-span-3 p-5">
-            <Checkout/>
+            <Checkout cart= {cart!}/>
           </div>
         </div>
       ) : (
