@@ -9,6 +9,7 @@ export async function POST(req: Request) {
   try {
     const body = await req.json();
     const { items } = body;
+    console.log("items", items)
 
     // Validate items
     if (!Array.isArray(items) || items.length === 0) {

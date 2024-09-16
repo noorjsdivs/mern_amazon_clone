@@ -4,9 +4,10 @@ import { FC } from "react";
 
 interface CheckoutBtnProps {
   cart: Array<{ id: string; quantity: number; price: number }>; 
+  totalPrice:number,
 }
 
-const CheckoutBtn: FC<CheckoutBtnProps> = ({ cart }) => {
+const CheckoutBtn: FC<CheckoutBtnProps> = ({ cart, totalPrice }) => {
   const publishableKey =
     "pk_test_51O7qmVGR9hlKk72pMHG35MMR7ZuvW4xFgWERZsV4r0UtjXuG4gTgKsfM4utp2WhMrr8iyDTsihLLthcbem1t0yEq000EoeHwMX";
   const stripePromise = loadStripe(publishableKey);
@@ -19,7 +20,11 @@ const CheckoutBtn: FC<CheckoutBtnProps> = ({ cart }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          items: [{ name: "Sample Product", price: 2000, quantity: 1 }],
+          items:cart?.map((item:any) => ({
+            name:item?.title,
+            price:item?.price,
+            quantity:item?.quantity,
+          }))
         }),
       });
 
