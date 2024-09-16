@@ -41,7 +41,7 @@ const TopHeader = () => {
               href={"/cart"}
               className="p-2 border border-primary hover:border-white duration-200 cursor-pointer flex items-end font-bold relative"
             >
-              <CartMenu />
+              <CartMenu /> 
             </Link>
           </div>
         </div>
