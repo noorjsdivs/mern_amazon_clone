@@ -1,9 +1,12 @@
+"use client"
 import { cartIcon } from '@/app/assets'
+import { store } from '@/lib/store'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const CartButton = () => {
+  const {cartProduct} =store()
   return (
     <Link href={"/cart"}
     className='text-xs text-gray-100 headerItem relative'>
@@ -12,7 +15,9 @@ const CartButton = () => {
             <p className='text-xs text-white font-bold mt-3'>
                 Cart
             </p>
-            <span className='absolute text-amazonOrange text-sm top-2 left-[29px] font-semibold'>0</span>
+            <span className='absolute text-amazonOrange text-sm top-2 left-[29px] font-semibold'>
+              {cartProduct?.length > 0 ?cartProduct?.length: 0}
+            </span>
     </Link>
   )
 }

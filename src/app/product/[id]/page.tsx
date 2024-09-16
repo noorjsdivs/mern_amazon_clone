@@ -119,6 +119,33 @@ const SingleProductPage = async ({searchParams}:Props) => {
             </p>
         </div>
        </div>
+       <div className=' p-5 md:p-10 bg-[#f7f7f7] col-span-2 flex items-center flex-wrap gap-5 md:gap-10'>
+        {product?.reviews?.map((item)=>(
+            <div key={item?.reviewerName} 
+                className='bg-white/80 p-5 border border-amazonOrangeDark/50 rounded-md hover:border-x-amazonOrangeDark
+                 hover:bg-white duration-200 flex flex-col gap-1'
+                >
+                <p className='text-base font-semibold'>
+                    {item?.comment}</p>
+                <div className='text-xs my-1'>
+                    <p className='font-semibold mb-1'>{item?.reviewerName}</p>
+                    <p>{item?.reviewerEmail}</p>
+                </div>
+                <div className='flex items-center'>
+                    {Array?.from({length:5}).map((_,index) =>(
+                        <MdStar
+                         key={index}
+                         className={`${
+                            index <item?.rating
+                            ?"text-amazonOrangeDark"
+                            :"text-lightText"
+                         }`}
+                        />
+                    ))}
+                </div>
+            </div>
+        ))}
+       </div>
        </div>
     </Container>
   )
