@@ -19,7 +19,7 @@ const ProductDetails = ({ product }: Props) => {
       <p className="text-secondary font-bold  ">
         Brand:{" "}
         <Link
-          href={`/?search=${product.brand.split(" ").join("")}`}
+          href={`/?search=${product?.brand?.split(" ").join("")}`}
           className="hover:underline hover:text-darkYellow"
         >
           {product?.brand}

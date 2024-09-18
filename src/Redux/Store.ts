@@ -1,7 +1,8 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import {  configureStore } from "@reduxjs/toolkit";
 import cartReducer from "@/Redux/cart/cartSlice";
 import userReducer from "@/Redux/user/userSlice";
 import favoriteReducer from "@/Redux/favorite/favoriteSlice";
+import searchReducer from '@/Redux/search/searchSlice';
 import storage from "redux-persist/lib/storage";
 import persistReducer from "redux-persist/es/persistReducer";
 import persistStore from "redux-persist/es/persistStore";
@@ -37,17 +38,14 @@ const favoritePersistedReducer = persistReducer(
   favoriteReducer
 );
 
-const combinedReducer = combineReducers({
-  cart: cartPersistedReducer,
-  user: userPersistedReducer,
-  favorite: favoritePersistedReducer,
-});
+
 
 const store = configureStore({
   reducer: {
     cart: cartPersistedReducer,
     user: userPersistedReducer,
     favorite: favoritePersistedReducer,
+    search: searchReducer
   },
   // middleware: (getDefaultMiddleware) =>
   //   getDefaultMiddleware({

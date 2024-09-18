@@ -3,7 +3,7 @@ import ProductList from "@/components/ProductList";
 import { getData } from "@/helper";
 
 export default async function Home() {
-  const { products } = await getData("https://dummyjson.com/products");
+  const { products } = await getData("https://dummyjson.com/products?limit=194");
 
   return (
     <div className="relative">

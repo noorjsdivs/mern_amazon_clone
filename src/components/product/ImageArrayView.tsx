@@ -1,6 +1,10 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import ImageSuspanse from "../ImageSuspanse";
+import dynamic from "next/dynamic";
+import Spinner from "../animation/Spinner";
+const LoadImage = dynamic(()=> import('../ImageSuspanse'), {loading: ()=> <Spinner/>})
 
 interface Props {
   images: string[];
@@ -19,24 +23,26 @@ const ImageArrayView = ({ images }: Props) => {
             } rounded-md duration-300`}
             onClick={() => setCurrentImage(url)}
           >
-            <Image
+            {/* <Image
               src={url}
               alt="amazon"
               width={100}
               height={100}
               className="w-full aspect-square object-contain"
-            />
+            /> */}
+            <LoadImage image={url} alt="Amazon"/>
           </button>
         ))}
       </div>
       <div className="flex-1">
-        <Image
+        {/* <Image
           src={currentImage}
           alt={currentImage}
           width={500}
           height={500}
           className="p-4 w-full aspect-square object-contain bg-gray-50 rounded-md"
-        />
+        /> */}
+        <LoadImage image={currentImage} alt={currentImage}/>
       </div>
     </div>
   );

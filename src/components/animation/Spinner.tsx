@@ -1,12 +1,20 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
-const Spinner = () => {
+interface Props {
+  className?: string
+}
+
+const Spinner = ({className} : Props) => {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div role="status">
         <svg
           aria-hidden="true"
-          className="inline w-8 h-8 text-gray-200 animate-spin dark:text-white fill-blue-600"
+          className={twMerge(
+            "inline w-8 h-8 text-gray-200 animate-spin dark:text-white fill-blue-600",
+            className
+          )}
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

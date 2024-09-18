@@ -13,6 +13,7 @@ interface Props {
 const AllMenuIcon = ({ categories }: Props) => {
   const [showMenu, setShowMenu] = useState(false);
   const divRef = useRef<HTMLDivElement | null>(null);
+  const hiddenMenuRef = useRef(null);
 
   // functions
   const closeMenuOnOutsideClick = (event: React.MouseEvent) => {
@@ -22,30 +23,31 @@ const AllMenuIcon = ({ categories }: Props) => {
     }
   };
 
-  useEffect(()=> {
-    const handleCloseMenu = (event:MouseEvent) => {
+  useEffect(() => {
+    const handleCloseMenu = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if(target?.nodeName  === 'A'){
-       setShowMenu(prev => !prev)
+      const current = hiddenMenuRef.current as HTMLElement | null;
+      if (target?.nodeName === "A" && current?.contains(target)) {
+        setShowMenu((prev) => !prev);
       }
-    }
-    document.addEventListener('click', handleCloseMenu);
+    };
+    document.addEventListener("click", handleCloseMenu);
 
-    return () => document.removeEventListener('click', handleCloseMenu);
-  }, [])
+    return () => document.removeEventListener("click", handleCloseMenu);
+  }, []);
   return (
     <AnimatePresence>
-      <li className=" border border-secondary hover:border-white/90 duration-200">
+        <li  className=" border border-secondary hover:border-white/90 duration-200">
         {/* MENU BUTTON */}
-        <button
-          onClick={() => setShowMenu((prev) => !prev)}
-          className="p-1 flex items-center gap-2 text-white"
-        >
-          <span>
-            <IoMenuOutline size={24} />
-          </span>
-          All
-        </button>
+          <button
+            onClick={() => setShowMenu((prev) => !prev)}
+            className="p-1 flex items-center gap-2 text-white"
+          >
+            <span>
+              <IoMenuOutline size={24} />
+            </span>
+            All
+          </button>
         {showMenu && (
           <motion.div
             ref={divRef}
@@ -69,15 +71,15 @@ const AllMenuIcon = ({ categories }: Props) => {
                 <MdClose size={32} />
               </button>
               <div className="overflow-auto w-full h-full">
-                <div >
+                <div ref={hiddenMenuRef}>
                   <HiddenMenuItems categories={categories} />
                 </div>
               </div>
             </motion.div>
           </motion.div>
         )}
-      </li>
-    </AnimatePresence>
+    </li>
+      </AnimatePresence>
   );
 };
 
