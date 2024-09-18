@@ -7,7 +7,7 @@ const Search = () => {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <div className="text-black rounded-md flex items-center overflow-hidden">
+    <div className="text-black rounded-md flex items-center">
       <SelectCategory />
       <div className="h-full flex-1 relative">
         <input
@@ -18,7 +18,11 @@ const Search = () => {
           value={inputValue}
         />
         {inputValue && (
-          <RiCloseFill onClick={()=> setInputValue('')} size={20} className="absolute top-1/2 right-1 -translate-y-1/2 text-primary z-50 hover:text-darkYellow duration-200 cursor-pointer" />
+          <RiCloseFill
+            onClick={() => setInputValue("")}
+            size={20}
+            className="absolute top-1/2 right-1 -translate-y-1/2 text-primary hover:text-darkYellow duration-200 cursor-pointer"
+          />
         )}
       </div>
       <button className="bg-yellow p-2 rounded-r-md font-bold hover:bg-darkYellow duration-300">

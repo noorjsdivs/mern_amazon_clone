@@ -8,7 +8,7 @@ interface Props {
 
 const Container = ({children, className} : Props) => {
   return (
-    <div className={twMerge('px-2 md:px-4 py-3 relative container mx-auto', className)}>{children}</div>
+    <div className={twMerge('px-2 md:px-4 py-3 container mx-auto', className)}>{children}</div>
   )
 }
 

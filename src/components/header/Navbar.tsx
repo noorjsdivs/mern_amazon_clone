@@ -1,10 +1,11 @@
-import { logo } from "@/assets/images/Image";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import Container from "../Container";
+import AllMenuIcon from "./AllMenuIcon";
+import { getData } from "@/helper";
 
-const Navbar = () => {
+const Navbar =async () => {
+
   const navlink = [
     {
       title: "Today's Deals",
@@ -28,11 +29,14 @@ const Navbar = () => {
     },
   ];
 
+  const categories =  await getData('https://dummyjson.com/products/category-list');
+
   return (
-    <div className="bg-secondary">
-      <Container>
-        <div className="text-white font-medium">
+    <div className="bg-secondary ">
+      <Container className="py-1">
+        <div className="text-white font-medium ">
           <ul className="flex justify-between lg:justify-start items-center gap-2 flex-wrap">
+            <AllMenuIcon categories={categories}/>
             {navlink.map((item) => (
               <li
                 key={item?.title}

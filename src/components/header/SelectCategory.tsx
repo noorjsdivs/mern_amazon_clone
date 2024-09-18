@@ -24,50 +24,50 @@ const SelectCategory = () => {
         </span>
       </div>
       {isOpen && (
-        <ul className="absolute top-full left-0 text-primary bg-gray-50 p-4 rounded-md">
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            All
-          </li>
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            Add Category
-          </li>
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            Baby
-          </li>
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            Automotive
-          </li>
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            Mobile
-          </li>
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            Desktop
-          </li>
-          <li
-            onClick={handleCategory}
-            className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
-          >
-            Laptop
-          </li>
-        </ul>
+        <ul className="absolute top-full left-0 text-primary bg-gray-50 p-4 rounded-md z-50">
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          All
+        </li>
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          Add Category
+        </li>
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          Baby
+        </li>
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          Automotive
+        </li>
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          Mobile
+        </li>
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          Desktop
+        </li>
+        <li
+          onClick={handleCategory}
+          className="hover:text-gray-500 cursor-pointer text-nowrap font-semibold duration-200"
+        >
+          Laptop
+        </li>
+      </ul>
       )}
     </div>
   );

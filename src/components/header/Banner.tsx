@@ -23,7 +23,7 @@ function Banner() {
   }, []);
 
   return (
-    <div className="w-full z-10">
+    <div className="w-full">
       <ReactSimplyCarousel
         activeSlideIndex={activeSlideIndex}
         onRequestChange={setActiveSlideIndex}

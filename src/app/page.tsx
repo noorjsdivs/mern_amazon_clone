@@ -6,9 +6,9 @@ export default async function Home() {
   const { products } = await getData("https://dummyjson.com/products");
 
   return (
-    <div>
+    <div className="relative">
       <Banner />
-      <ProductList products={products} />
+      <ProductList className="-mt-28 relative" products={products} />
     </div>
   );
 }
