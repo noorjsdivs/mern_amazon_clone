@@ -17,10 +17,13 @@ const Search = async ({ searchParams }: Props) => {
   const { products: queryProduct } = await getData(endpoint);
   return (
     <>
-    
-  
-      <ProductList className="" products={queryProduct} />
-    
+      {queryProduct.length > 0 ? (
+        <ProductList className="" products={queryProduct} />
+      ) : (
+        <div className="w-full h-screen flex justify-center items-center">
+          <p className="text-3xl font-bold text-secondary/80">No search product</p>
+        </div>
+      )}
     </>
   );
 };

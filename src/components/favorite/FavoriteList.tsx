@@ -3,7 +3,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { StateType } from "../../../type";
 import FavoriteCart from "./FavoriteCart";
-import { div } from "framer-motion/client";
 
 const FavoriteList = () => {
   const favoriteItems = useSelector(

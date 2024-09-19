@@ -1,7 +1,5 @@
 "use client";
-import Image from "next/image";
 import React, { useState } from "react";
-import ImageSuspanse from "../ImageSuspanse";
 import dynamic from "next/dynamic";
 import Spinner from "../animation/Spinner";
 const LoadImage = dynamic(()=> import('../ImageSuspanse'), {loading: ()=> <Spinner/>})

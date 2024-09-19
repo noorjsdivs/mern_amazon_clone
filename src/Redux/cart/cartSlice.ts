@@ -1,7 +1,5 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { productType } from "../../../type";
-import toast from "react-hot-toast";
-import { stat } from "fs";
 
 interface InitialType {
   cart: productType[];
@@ -23,7 +21,7 @@ const cartSlice = createSlice({
         (item) => item?.id === action.payload
       );
       if (existProduct) {
-        if (existProduct?.quantity! < existProduct?.stock) {
+        if (existProduct.quantity! < existProduct?.stock) {
           existProduct.quantity! += 1;
         }
       }
@@ -33,7 +31,7 @@ const cartSlice = createSlice({
         (item) => item?.id === action.payload
       );
       if (existProduct) {
-        if (existProduct?.quantity! > 1) {
+        if (existProduct.quantity! > 1) {
           existProduct.quantity! -= 1;
         }
       }

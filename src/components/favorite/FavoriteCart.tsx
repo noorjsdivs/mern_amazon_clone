@@ -5,7 +5,6 @@ import Spinner from "../animation/Spinner";
 import PriceFormate from "../PriceFormate";
 import Link from "next/link";
 import AddToCartButton from "../AddToCartButton";
-import { FaCross } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { removeToFavorite } from "@/Redux/favorite/favoriteSlice";

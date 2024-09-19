@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 import { productType } from "../../../../type";
-import { title } from "process";
 
 const stripe = new Stripe(process.env.STRIPE_SK!, {
   apiVersion: "2024-06-20",
@@ -52,7 +51,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({url: session?.url });
   } catch (error: any) {
     return NextResponse.json(
-      { "error message": error.message },
+      { "error message": error.message},
       { status: 500 }
     );
   }

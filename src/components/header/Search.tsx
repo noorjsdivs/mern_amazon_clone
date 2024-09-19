@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import SelectCategory from "./SelectCategory";
 import { RiCloseFill } from "react-icons/ri";
 import { getData } from "@/helper";
@@ -13,7 +13,7 @@ const Search = () => {
   const router = useRouter();
 
   const handleFullViewButton = () => {
-    if(inputValue){
+    if (inputValue) {
       router.push(`/search?limit=194&order=asc&sortBy=title&q=${inputValue}`);
     }
   };
@@ -38,7 +38,7 @@ const Search = () => {
     // click function
     const handleCloseSearchList = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if(target?.nodeName !=='button'){
+      if (target?.nodeName !== "button") {
         setInputValue("");
       }
     };
@@ -50,7 +50,10 @@ const Search = () => {
   return (
     <div className="text-black rounded-md flex items-center relative">
       <SelectCategory />
-      <div className="h-full flex-1 relative">
+      <div
+        
+        className=" flex h-full flex-1 relative"
+      >
         <input
           onChange={(e) => setInputValue(e.target.value)}
           type="text"
@@ -62,16 +65,14 @@ const Search = () => {
           <RiCloseFill
             onClick={() => setInputValue("")}
             size={20}
-            className="absolute top-1/2 right-1 -translate-y-1/2 text-primary hover:text-darkYellow duration-200 cursor-pointer"
+            className="absolute top-1/2 right-16 -translate-y-1/2 text-primary hover:text-darkYellow duration-200 cursor-pointer"
           />
         )}
+        <button
+          onClick={handleFullViewButton}
+          className="bg-yellow p-2 rounded-r-md font-bold hover:bg-darkYellow duration-300"
+        >Search</button>
       </div>
-      <button
-        onClick={handleFullViewButton}
-        className="bg-yellow p-2 rounded-r-md font-bold hover:bg-darkYellow duration-300"
-      >
-        search
-      </button>
 
       {/* Search result */}
       {inputValue && (

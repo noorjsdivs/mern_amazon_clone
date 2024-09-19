@@ -9,20 +9,20 @@ import { StateType } from "../../../type";
 import Image from "next/image";
 
 const ProfileMenu = () => {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const dispatch = useDispatch();
-  const user  = useSelector((state: StateType) => state?.user?.user!);
+  const user  = useSelector((state: StateType) => state?.user?.user);
 
   const handleSignOut = () => {
     signOut();
-    dispatch(removeUser(''));
+    dispatch(removeUser());
   }
 
   useEffect(() => {
     if (session?.user) {
       dispatch(addUser(session.user));
     } else {
-      dispatch(removeUser(''))
+      dispatch(removeUser())
     }
   });
   return (

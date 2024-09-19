@@ -1,7 +1,6 @@
 import React from "react";
 import { productType } from "../../../type";
 import Spinner from "../animation/Spinner";
-import Image from "next/image";
 import dynamic from "next/dynamic";
 import PriceFormate from "../PriceFormate";
 import Link from "next/link";

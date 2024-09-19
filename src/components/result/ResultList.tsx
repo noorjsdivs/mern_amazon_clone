@@ -1,6 +1,5 @@
 import React from "react";
 import { productType } from "../../../type";
-import ResultItem from "./ResultItem";
 import Container from "../Container";
 import ProductCart from "../ProductCart";
 
@@ -13,7 +12,7 @@ const ResultList = ({ products }: Props) => {
     <div>
       <Container>
         {products.map((item) => (
-          <ProductCart product={item} />
+          <ProductCart key={item?.id} product={item} />
         ))}
       </Container>
     </div>

@@ -1,4 +1,4 @@
-import { cartImage, logo } from "@/assets/images/Image";
+import { logo } from "@/assets/images/Image";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

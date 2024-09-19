@@ -14,9 +14,9 @@ const PriceFormate = ({ price, className }: Props) => {
   });
   return (
     
-      <p className={twMerge(" w-20 text-nowrap", className)}>
+      <span className={twMerge(" w-20 text-nowrap", className)}>
         {FormatedPrice}
-      </p>
+      </span>
     
   );
 };

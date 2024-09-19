@@ -1,11 +1,7 @@
 import React from 'react'
-import { productType } from '../../../type'
 
-interface Props {
-    product: productType
-}
 
-const ResultItem = ({product}: Props) => {
+const ResultItem = () => {
   return (
     <div>ResultItem</div>
   )

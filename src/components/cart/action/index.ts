@@ -5,7 +5,7 @@ export const calculateDiscount = (cart: productType[]) => {
     const singleProductDiscount =
       (item?.price / 100) * item?.discountPercentage;
 
-    total += singleProductDiscount * item?.quantity!;
+    total += singleProductDiscount * item.quantity!;
     return total;
   }, 0);
 

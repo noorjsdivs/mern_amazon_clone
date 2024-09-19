@@ -6,7 +6,6 @@ import { productType, StateType } from "../../type";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addToFavorite,
-  clearFavorite,
   removeToFavorite,
 } from "@/Redux/favorite/favoriteSlice";
 import toast from "react-hot-toast";
