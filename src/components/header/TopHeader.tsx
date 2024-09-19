@@ -33,8 +33,10 @@ const TopHeader = () => {
           <div>
             <ProfileMenu />
           </div>
-          <div className="px-2 border border-primary hover:border-white duration-200 cursor-pointer hidden md:inline-block">
-            <FavoriteCart />
+          <div>
+            <Link href={'/favorite'} className="px-2 border border-primary hover:border-white duration-200 cursor-pointer hidden md:inline-block">
+              <FavoriteCart />
+            </Link>
           </div>
           <div>
             <Link

@@ -46,11 +46,11 @@ const ProductCart = ({ product }: Props) => {
             <PriceFormate price={actualPrice} />
           </s>
         </div>
-        <p className="flex justify-between">
-          <span className="text-secondary/75">
+        <p className="flex justify-between flex-wrap gap-2">
+          <span className="text-secondary text-nowrap">
             category: <span className="font-bold">{product?.category}</span>
           </span>{" "}
-          <span className="px-2 rounded-lg bg-darkYellow/20 ">
+          <span className="px-2 rounded-lg bg-darkYellow/20 text-nowrap ">
             In Stock : {product?.stock}
           </span>
         </p>
