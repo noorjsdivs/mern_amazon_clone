@@ -32,7 +32,6 @@ const Banner = () => {
             <Image src={banner_5} alt="banner_5" />
           </div>
         </Carousel>
-        <div className="w-full h-20 bg-gradient-to-t from-gray-100 to-transparent absolute bottom-0 x-20"></div>
       </div>
     </>
   );

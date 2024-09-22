@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className="relative">
       <Banner />
-      <div className="-mt-32">
+      <div className="-mt-60 z-50">
         <ProductList />
       </div>
     </div>
