@@ -4,6 +4,7 @@ import Container from "../Container";
 import CartSummary from "./CartSummary";
 import CartProduct from "./CartProduct";
 import { useSelector } from "react-redux";
+import { ProductType } from "@/type";
 
 const CartProducts = () => {
   // @ts-ignore
@@ -21,7 +22,8 @@ const CartProducts = () => {
             </div>
             <div className="flex flex-col lg:flex-row justify-between gap-6 mt-10">
               <div className="lg:w-2/3 w-full border-t-2 border-r-2 lg:border-r-2 border-l-2 border-amazonYellow ">
-                {cart.map((product) => (
+                {cart.map((product: ProductType) => (
+                  //@ts-ignore
                   <CartProduct key={product?.id} product={product} />
                 ))}
               </div>

@@ -13,8 +13,6 @@ export const metadata: Metadata = {
       title: "Product View Page | Amazon Clone app",
 };
 
-
-
 const ProductPage = async ({ params }: { params: ProductType }) => {
       const { id } = params;
       const endpoint = `https://dummyjson.com/products/${id}`;
@@ -23,7 +21,7 @@ const ProductPage = async ({ params }: { params: ProductType }) => {
 
       return (
             <div className="py-10 px-4 lg:px-0">
-                  <h1 className="text-center mb-8 lg:text-4xl text-2xl text-green-600 font-medium tracking-wide">Single Product Page</h1>
+                  {/* <h1 className="text-center mb-8 lg:text-4xl text-2xl text-green-600 font-medium tracking-wide">Single Product Page</h1> */}
                   <Container className={"flex flex-col lg:flex-row justify-between gap-6 border-2  border-amazonYellow"}>
                         {/* Image Section */}
                         <div>
@@ -79,7 +77,7 @@ const ProductPage = async ({ params }: { params: ProductType }) => {
                               </div>
 
                               <h1 className="mt-4 text-sm md:text-base lg:text-lg">{product?.description}</h1>
-                              <h1 className="mt-2 text-sm md:text-base lg:text-lg">Brand: {product?.brand}</h1>
+                              {/* <h1 className="mt-2 text-sm md:text-base lg:text-lg">Brand: {product?.brand}</h1> */}
                               <h1 className="mt-2 text-sm md:text-base lg:text-lg">Category: {product?.category}</h1>
                               <div className="w-44 mt-2 lg:mb-0 mb-4">
                                     <AddToCartButton className="" product={product} />
