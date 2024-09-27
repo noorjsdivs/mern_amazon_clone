@@ -21,7 +21,6 @@ const ProductPage = async ({ params }: { params: ProductType }) => {
 
       return (
             <div className="py-10 px-4 lg:px-0">
-                  {/* <h1 className="text-center mb-8 lg:text-4xl text-2xl text-green-600 font-medium tracking-wide">Single Product Page</h1> */}
                   <Container className={"flex flex-col lg:flex-row justify-between gap-6 border-2  border-amazonYellow"}>
                         {/* Image Section */}
                         <div>
