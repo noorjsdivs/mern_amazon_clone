@@ -1,5 +1,5 @@
-const singlePage = () => {
-  return <div>singlePage</div>;
+const SinglePage = () => {
+  return <div>SinglePage</div>;
 };
 
-export default singlePage;
+export default SinglePage;

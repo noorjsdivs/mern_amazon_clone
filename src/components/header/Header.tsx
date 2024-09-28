@@ -1,6 +1,6 @@
-import React from "react";
-import TopHeader from "@/components/header/TopHeader";
-import BottomHeader from "@/components/header/BottomHeader";
+import BottomHeader from "./BottomHeader";
+import TopHeader from "./TopHeader";
+
 const Header = () => {
   return (
     <div>
